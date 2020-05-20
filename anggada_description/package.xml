@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>anggada_description</name>
+  <version>0.0.0</version>
+  <description>anggada_description Package</description>
+
+  <author>Billy Nugraha Sutandi</author>
+  <maintainer email="billy.nugraha.s@gmail.com">Billy Nugraha Sutandi</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

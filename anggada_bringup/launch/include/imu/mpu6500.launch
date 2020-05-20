@@ -1,0 +1,4 @@
+<launch>
+    <!-- <node name="ydlidar_node"  pkg="ydlidar"  type="ydlidar_node" output="screen">
+    </node> -->
+</launch>
