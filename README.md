@@ -2,7 +2,7 @@
 Anggada - Quadruped Controller ROS Package
 
 
-ANGGADA is open source development framework for quadruped robot using Dynamixel AX-12/AX-18 series . This frame work is modified from champ library [*"𓃡 CHAMP Quadruped Controller ROS Package"*](https://github.com/chvmp/champ).
+ANGGADA is open source development framework for quadruped robot using Dynamixel AX-12/AX-18 series . This framework is modified from champ library [*"𓃡 CHAMP Quadruped Controller ROS Package"*](https://github.com/chvmp/champ).
 
 Core Features:
 - Fully Autonomous (using ROS navigation Stack).
@@ -37,7 +37,6 @@ TESTED ON:
 
     sudo apt install -y python-rosdep
     cd <your_ws>/src
-    git clone https://github.com/chvmp/champ
     git clone https://github.com/billynugrahas/anggada
     git clone https://github.com/chvmp/champ_teleop
     cd ..
