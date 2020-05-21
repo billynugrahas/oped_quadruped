@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 '''
 Copyright (c) 2019-2020, Juan Miguel Jimeno
 All rights reserved.
@@ -27,33 +27,25 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 '''
 
 import rospy
-from champ_msgs.msg import Joints
-from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
+from nav_msgs.msg import Odometry
+from geometry_msgs.msg import Point, Quaternion
+from champ_msgs.msg import Pose
+import tf
 
-class JointsController:
+class SimPose:
     def __init__(self):
-        rospy.Subscriber("/champ/joint_states/raw", Joints, self.joint_states_callback)
-        self.joint_control_pub = rospy.Publisher('/champ/joint_group_position_controller/command', JointTrajectory, queue_size = 100)
+        rospy.Subscriber("odom/ground_truth", Odometry, self.odometry_callback) 
+        self.sim_pose_publisher = rospy.Publisher("/champ/gazebo/pose", Pose, queue_size=50)
 
-    def joint_states_callback(self, joints):
-        joint_control = JointTrajectory()
-        joint_control.joint_names = [
-            "lf_hip_joint", "lf_upper_leg_joint", "lf_lower_leg_joint", 
-            "rf_hip_joint", "rf_upper_leg_joint", "rf_lower_leg_joint", 
-            "lh_hip_joint", "lh_upper_leg_joint", "lh_lower_leg_joint", 
-            "rh_hip_joint", "rh_upper_leg_joint", "rh_lower_leg_joint"
-        ]
-        point = JointTrajectoryPoint()
-        point.time_from_start = rospy.Duration(1.0 / 60.0)
-        point.positions = joints.position    
-        joint_control.points.append(point)
+    def odometry_callback(self, data):
+        sim_pose_msg = Pose()
+        sim_pose_msg.roll = data.pose.pose.orientation.x
+        sim_pose_msg.pitch = data.pose.pose.orientation.y
+        sim_pose_msg.yaw = data.pose.pose.orientation.z
 
-        self.joint_control_pub.publish(joint_control)
+        self.sim_pose_publisher.publish(sim_pose_msg)
 
 if __name__ == "__main__":
-    rospy.init_node('champ_gazebo_joints_controller', anonymous=True)
-    v = JointsController()
+    rospy.init_node("champ_gazebo_sim_pose", anonymous = True)
+    odom = SimPose()
     rospy.spin()
-
-
-    
