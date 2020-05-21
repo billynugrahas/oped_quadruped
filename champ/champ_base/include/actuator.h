@@ -59,7 +59,10 @@ namespace champ
                                                     LHH_SERVO_ID, LHU_SERVO_ID, LHL_SERVO_ID
                                                     } ;
 
-            int16_t leg_joint_offsett[3] = {
+            int16_t leg_joint_offsett[4][3] = {
+                                        0,-386, 471,
+                                        0,-386, 471,
+                                        0,-386, 471,
                                         0,-386, 471
                                        };
 
@@ -243,7 +246,7 @@ namespace champ
                           
                               //   ROS_INFO("Dynamixel leg %d - joint %d - ID: %d", leg_number, joint_number, dxl_quadruped_servo_address[leg_number][joint_number]);
                               // convert dynamixel goal position value into byte array
-                              dxl_goal_position = ((((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) + HALF_RANGE) * DEG_TO_PULSE) + leg_joint_offsett[joint_number]);
+                              dxl_goal_position = ((((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) + HALF_RANGE) * DEG_TO_PULSE) + leg_joint_offsett[leg_number][joint_number]);
 
                               // fprintf(stderr, "dxl_goal_position = %d \n", dxl_goal_position);
                               param_goal_position_moving_speed[0] = DXL_LOBYTE(dxl_goal_position);
@@ -301,7 +304,7 @@ namespace champ
                                 // printf("%s\n", packetHandler->getRxPacketError(dxl_error));
                               }
 
-                              joint_position[leg_id] = ((((leg_present_position[leg_number][joint_number] - leg_joint_offsett[joint_number]) * PULSE_TO_DEG) - HALF_RANGE) * DEG_TO_RAD); //leg_present_position is on dynamixel pulse system
+                              joint_position[leg_id] = ((((leg_present_position[leg_number][joint_number] - leg_joint_offsett[leg_number][joint_number]) * PULSE_TO_DEG) - HALF_RANGE) * DEG_TO_RAD); //leg_present_position is on dynamixel pulse system
                               printf("[ID:%03d] PresPos:%03d Rad:%.03f\n",  dxl_quadruped_servo_address[leg_number][joint_number], leg_present_position[leg_number][joint_number], thetas_[leg_id]);
 
                               leg_id++;

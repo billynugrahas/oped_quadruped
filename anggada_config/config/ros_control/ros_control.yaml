@@ -20,15 +20,15 @@
           - rh_lower_leg_joint
 
       gains:
-        lf_hip_joint :       {p: 9.0, d: 0.03, i: 0.1}
-        lf_upper_leg_joint : {p: 9.0, d: 0.03, i: 0.1}
-        lf_lower_leg_joint : {p: 9.0, d: 0.03, i: 0.1}
-        rf_hip_joint :       {p: 9.0, d: 0.03, i: 0.1}
-        rf_upper_leg_joint : {p: 9.0, d: 0.03, i: 0.1}
-        rf_lower_leg_joint : {p: 9.0, d: 0.03, i: 0.1}
-        lh_hip_joint :       {p: 9.0, d: 0.03, i: 0.1}
-        lh_upper_leg_joint : {p: 9.0, d: 0.03, i: 0.1}
-        lh_lower_leg_joint : {p: 9.0, d: 0.03, i: 0.1}
-        rh_hip_joint :       {p: 9.0, d: 0.03, i: 0.1}
-        rh_upper_leg_joint : {p: 9.0, d: 0.03, i: 0.1}
-        rh_lower_leg_joint : {p: 9.0, d: 0.03, i: 0.1}
+        lf_hip_joint :       {p: 7.0, d: 0.03, i: 0.0}
+        lf_upper_leg_joint : {p: 7.0, d: 0.03, i: 0.0}
+        lf_lower_leg_joint : {p: 7.0, d: 0.03, i: 0.0}
+        rf_hip_joint :       {p: 7.0, d: 0.03, i: 0.0}
+        rf_upper_leg_joint : {p: 7.0, d: 0.03, i: 0.0}
+        rf_lower_leg_joint : {p: 7.0, d: 0.03, i: 0.0}
+        lh_hip_joint :       {p: 7.0, d: 0.03, i: 0.0}
+        lh_upper_leg_joint : {p: 7.0, d: 0.03, i: 0.0}
+        lh_lower_leg_joint : {p: 7.0, d: 0.03, i: 0.0}
+        rh_hip_joint :       {p: 7.0, d: 0.03, i: 0.0}
+        rh_upper_leg_joint : {p: 7.0, d: 0.03, i: 0.0}
+        rh_lower_leg_joint : {p: 7.0, d: 0.03, i: 0.0}
