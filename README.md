@@ -56,6 +56,9 @@ TESTED ON:
         sudo chmod 777 ./*
         sudo sh initenv.sh
      2. udev rules for U2D2 (USB TO DYNAMIXEL 2)
+        cd <your_ws>/src/anggada/hardware_install
+        sudo chmod 777 ./*
+        sudo sh u2d2_dynamixel.sh
         
     
 1.4. Build your workspace:
