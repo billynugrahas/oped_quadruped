@@ -38,6 +38,7 @@ TESTED ON:
     sudo apt install -y python-rosdep
     sudo apt install -y ros-melodic-dynamixel-sdk
     cd <your_ws>/src
+    git clone https://github.com/YDLIDAR/ydlidar_ros
     git clone https://github.com/billynugrahas/anggada
     git clone https://github.com/chvmp/champ_teleop
     cd ..
@@ -49,8 +50,15 @@ TESTED ON:
 
     sudo apt-get install i2c-tools python-smbus
     
+1.3. Create udev rules
+    1. udev rules for ydlidar
+        roscd ydlidar_ros/startup
+        sudo chmod 777 ./*
+        sudo sh initenv.sh
+     2. udev rules for U2D2 (USB TO DYNAMIXEL 2)
+        
     
-1.2. Build your workspace:
+1.4. Build your workspace:
 
     cd <your_ws>
     catkin_make
