@@ -36,6 +36,7 @@ TESTED ON:
 1.1. Clone and install all dependencies:
 
     sudo apt install -y python-rosdep
+    sudo apt install -y ros-melodic-dynamixel-sdk
     cd <your_ws>/src
     git clone https://github.com/billynugrahas/anggada
     git clone https://github.com/chvmp/champ_teleop
