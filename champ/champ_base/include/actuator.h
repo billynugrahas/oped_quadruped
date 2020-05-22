@@ -48,22 +48,29 @@ namespace champ
 
             /**
              *  LEG DEFINITION
-             * 2-1-0  2[   ]3   0-1-2
+             * 2-1-0  3[   ]2   0-1-2
              * 2-1-0  1[ v ]0   0-1-2   
              * 
              **/
+            /**
+             * 
+                legs[total_legs++] = &lf;
+                legs[total_legs++] = &rf;
+                legs[total_legs++] = &lh;
+                legs[total_legs++] = &rh;
+            */
             int dxl_quadruped_servo_address[4][3] = {
                                                     LFH_SERVO_ID, LFU_SERVO_ID, LFL_SERVO_ID,
-                                                    RFH_SERVO_ID, RFU_SERVO_ID, RFL_SERVO_ID,
                                                     RHH_SERVO_ID, RHU_SERVO_ID, RHL_SERVO_ID,
-                                                    LHH_SERVO_ID, LHU_SERVO_ID, LHL_SERVO_ID
+                                                    LHH_SERVO_ID, LHU_SERVO_ID, LHL_SERVO_ID,
+                                                    RFH_SERVO_ID, RFU_SERVO_ID, RFL_SERVO_ID
                                                     } ;
 
             int16_t leg_joint_offsett[4][3] = {
-                                        0,-386, 471,
-                                        0,-386, 471,
-                                        0,-386, 471,
-                                        0,-386, 471
+                                        0, 82, 194,
+                                        0, -82, 286, //176
+                                        0, 82, 194,
+                                        0, -82, 286
                                        };
 
             //dynamixel definition
@@ -149,12 +156,18 @@ namespace champ
 
                 void moveJoints(float joint_positions[12])
                 {
+                    // for(unsigned int i = 0; i < 12; i++)
+                    // {
+                    //   printf("joint %d joint_pos: %.02f \n", i, joint_positions[i]);
+                    // }
                   #ifdef USE_DYNAMIXEL_ACTUATOR
                     for(unsigned int i = 0; i < 4; i++)
                     {
+                      // printf("leg %d joint_pos: %.02f - %.02f - %.02f \n", i, joint_positions[i*3], joint_positions[(i*3) + 1], joint_positions[(i*3) + 2]);
                       leg_joint_position[i][0] = joint_positions[i*3];
                       leg_joint_position[i][1] = joint_positions[(i*3) + 1];
                       leg_joint_position[i][2] = joint_positions[(i*3) + 2];
+                      // printf("leg_j_p %d joint_pos: %.02f - %.02f - %.02f \n", i, leg_joint_position[i][0], leg_joint_position[i][1],leg_joint_position[i][2]);
                     }
 
                     syncWriteJoints();
@@ -255,6 +268,8 @@ namespace champ
                               param_goal_position_moving_speed[3] = DXL_HIBYTE(dxl_moving_speed);
 
                               dxl_addparam_result = groupSyncWrite.addParam(dxl_quadruped_servo_address[leg_number][joint_number], param_goal_position_moving_speed);
+                              // if (leg_number == 2) printf("id2: %02d dxl_goal_pos: %03d\n", dxl_quadruped_servo_address[leg_number][joint_number], dxl_goal_position);
+                              // if (leg_number == 1) printf("id1: %02d dxl_goal_pos: %03d\n", dxl_quadruped_servo_address[leg_number][joint_number], dxl_goal_position);
                               // printf("id: %02d dxl_goal_pos: %03d\n", dxl_quadruped_servo_address[leg_number][joint_number], dxl_goal_position);
                               // if (dxl_addparam_result != true)
                               // {

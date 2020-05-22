@@ -28,23 +28,27 @@
 #endif
 
 #ifdef USE_DYNAMIXEL_ACTUATOR
-    #define LFH_SERVO_ID 0
-    #define LFU_SERVO_ID 1
-    #define LFL_SERVO_ID 4
+    #define LFH_SERVO_ID 3
+    #define LFU_SERVO_ID 4
+    #define LFL_SERVO_ID 5
 
-    #define RFH_SERVO_ID 5
-    #define RFU_SERVO_ID 2
-    #define RFL_SERVO_ID 3
+    #define RFH_SERVO_ID 0
+    #define RFU_SERVO_ID 1
+    #define RFL_SERVO_ID 2
+
+    // #define RFU_SERVO_ID 2
+    // #define RFL_SERVO_ID 3
 
     //nanti dibalik lagi, rfh rfu harusnya 3 4
 
-    #define RHH_SERVO_ID 6
-    #define RHU_SERVO_ID 7
-    #define RHL_SERVO_ID 8
+    #define LHH_SERVO_ID 6
+    #define LHU_SERVO_ID 7
+    #define LHL_SERVO_ID 8
 
-    #define LHH_SERVO_ID 9
-    #define LHU_SERVO_ID 10
-    #define LHL_SERVO_ID 11
+    #define RHH_SERVO_ID 9
+    #define RHU_SERVO_ID 10
+    #define RHL_SERVO_ID 11
+
 
     #define LFH_INV false
     #define LFU_INV false
@@ -83,7 +87,7 @@
     #define TORQUE_ENABLE                   1                   // Value for enabling the torque
     #define TORQUE_DISABLE                  0                   // Value for disabling the torque
     
-    #define DXL_MOVING_SPEED                800
+    #define DXL_MOVING_SPEED                500
 
     #define DEG_TO_PULSE                    3.413333333
     #define PULSE_TO_DEG                    0.29296875
