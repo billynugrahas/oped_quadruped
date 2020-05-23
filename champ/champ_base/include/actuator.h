@@ -59,19 +59,40 @@ namespace champ
                 legs[total_legs++] = &lh;
                 legs[total_legs++] = &rh;
             */
+            // int dxl_quadruped_servo_address[4][3] = {
+            //                                         LFH_SERVO_ID, LFU_SERVO_ID, LFL_SERVO_ID,
+            //                                         RFH_SERVO_ID, RFU_SERVO_ID, RFL_SERVO_ID,
+            //                                         LHH_SERVO_ID, LHU_SERVO_ID, LHL_SERVO_ID,
+            //                                         RHH_SERVO_ID, RHU_SERVO_ID, RHL_SERVO_ID
+            //                                         } ;
             int dxl_quadruped_servo_address[4][3] = {
                                                     LFH_SERVO_ID, LFU_SERVO_ID, LFL_SERVO_ID,
-                                                    RHH_SERVO_ID, RHU_SERVO_ID, RHL_SERVO_ID,
+                                                    RFH_SERVO_ID, RFU_SERVO_ID, RFL_SERVO_ID,
                                                     LHH_SERVO_ID, LHU_SERVO_ID, LHL_SERVO_ID,
-                                                    RFH_SERVO_ID, RFU_SERVO_ID, RFL_SERVO_ID
+                                                    RHH_SERVO_ID, RHU_SERVO_ID, RHL_SERVO_ID
                                                     } ;
-
+//WIP
             int16_t leg_joint_offsett[4][3] = {
-                                        0, 82, 194,
-                                        0, -82, 286, //176
-                                        0, 82, 194,
-                                        0, -82, 286
+                                        0, 82, 243, //ok
+                                        0, 224, -217,
+                                        0, 82, 243, //ok
+                                        0, 234, -232
                                        };
+
+                      
+            // int16_t leg_joint_offsett[4][3] = {
+            //                             0, 82, 243, //ok
+            //                             0, -60, 217, //176
+            //                             0, 82, 243, //ok
+            //                             0, -60, 232
+            //                            };
+
+            // int16_t leg_joint_offsett[4][3] = {
+            //                             0, 60, 201,
+            //                             0, -234, 217, //176
+            //                             0, 27, 194,
+            //                             0, -224, 232
+            //                            };
 
             //dynamixel definition
             int dxl_comm_result = COMM_TX_FAIL;             // Communication result
@@ -163,11 +184,23 @@ namespace champ
                   #ifdef USE_DYNAMIXEL_ACTUATOR
                     for(unsigned int i = 0; i < 4; i++)
                     {
-                      // printf("leg %d joint_pos: %.02f - %.02f - %.02f \n", i, joint_positions[i*3], joint_positions[(i*3) + 1], joint_positions[(i*3) + 2]);
-                      leg_joint_position[i][0] = joint_positions[i*3];
-                      leg_joint_position[i][1] = joint_positions[(i*3) + 1];
-                      leg_joint_position[i][2] = joint_positions[(i*3) + 2];
-                      // printf("leg_j_p %d joint_pos: %.02f - %.02f - %.02f \n", i, leg_joint_position[i][0], leg_joint_position[i][1],leg_joint_position[i][2]);
+                      if (i == 0 || i == 2)
+                      {
+                        // printf("leg %d joint_pos: %.02f - %.02f - %.02f \n", i, joint_positions[i*3], joint_positions[(i*3) + 1], joint_positions[(i*3) + 2]);
+                        leg_joint_position[i][0] = joint_positions[i*3];
+                        leg_joint_position[i][1] = joint_positions[(i*3) + 1];
+                        leg_joint_position[i][2] = joint_positions[(i*3) + 2];
+                        // printf("leg_j_p %d joint_pos: %.02f - %.02f - %.02f \n", i, leg_joint_position[i][0], leg_joint_position[i][1],leg_joint_position[i][2]);
+                      }
+                      else
+                      {
+                        // printf("leg %d joint_pos: %.02f - %.02f - %.02f \n", i, joint_positions[i*3], joint_positions[(i*3) + 1], joint_positions[(i*3) + 2]);
+                        leg_joint_position[i][0] = -joint_positions[i*3];
+                        leg_joint_position[i][1] = -joint_positions[(i*3) + 1];
+                        leg_joint_position[i][2] = -joint_positions[(i*3) + 2];
+                        // printf("leg_j_p %d joint_pos: %.02f - %.02f - %.02f \n", i, leg_joint_position[i][0], leg_joint_position[i][1],leg_joint_position[i][2]);                      
+                      }
+                      
                     }
 
                     syncWriteJoints();
@@ -259,7 +292,19 @@ namespace champ
                           
                               //   ROS_INFO("Dynamixel leg %d - joint %d - ID: %d", leg_number, joint_number, dxl_quadruped_servo_address[leg_number][joint_number]);
                               // convert dynamixel goal position value into byte array
-                              dxl_goal_position = ((((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) + HALF_RANGE) * DEG_TO_PULSE) + leg_joint_offsett[leg_number][joint_number]);
+                              if (leg_number == 0 || leg_number == 2)
+                              {
+                              // fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %.02f \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]);
+                               dxl_goal_position = (((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE) + (512 + leg_joint_offsett[leg_number][joint_number]));
+                              }
+                              else
+                              {
+                              // fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %.02f \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]);
+                               dxl_goal_position = (((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE) + (512 + leg_joint_offsett[leg_number][joint_number]));
+                              fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %d \n", leg_number, joint_number, dxl_goal_position);
+                              }
+                              
+                              // dxl_goal_position = (((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE + 512) + leg_joint_offsett[leg_number][joint_number]);
 
                               // fprintf(stderr, "dxl_goal_position = %d \n", dxl_goal_position);
                               param_goal_position_moving_speed[0] = DXL_LOBYTE(dxl_goal_position);
