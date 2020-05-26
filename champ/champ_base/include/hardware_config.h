@@ -87,7 +87,7 @@
     #define TORQUE_ENABLE                   1                   // Value for enabling the torque
     #define TORQUE_DISABLE                  0                   // Value for disabling the torque
     
-    #define DXL_MOVING_SPEED                150
+    #define DXL_MOVING_SPEED                200
 
     #define DEG_TO_PULSE                    3.413333333
     #define PULSE_TO_DEG                    0.29296875
