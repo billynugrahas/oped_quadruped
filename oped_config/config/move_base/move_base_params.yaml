@@ -1,10 +1,10 @@
 base_global_planner: global_planner/GlobalPlanner
 base_local_planner: dwa_local_planner/DWAPlannerROS
+
 GlobalPlanner/use_dijkstra: false
 GlobalPlanner/visualize_potential: true
-GlobalPlanner/use_grid_path: true
-GlobalPlanner/old_navfn_behavior: true #gaktau
-
+GlobalPlanner/use_grid_path: false
+GlobalPlanner/old_navfn_behavior: false #gaktau
 
 shutdown_costmaps: false
 
@@ -19,6 +19,11 @@ oscillation_distance: 0.2
 
 conservative_reset_dist: 0.1 #distance from an obstacle at which it will unstuck itself
 
-cost_factor: 1.0
-neutral_cost: 55
+# http://kaiyuzheng.me/documents/navguide.pdf
+cost_factor: 0.55
+neutral_cost: 66
 lethal_cost: 253
+
+# cost_factor: 1.0
+# neutral_cost: 55
+# lethal_cost: 253

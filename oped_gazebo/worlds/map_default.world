@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <model name="map_default">
+      <pose>-0.299168 0.212582 0  0 0 0</pose>
+      <static>true</static>
+      <link name="map_default">
+      <inertial>
+        <mass>50.0</mass>
+        <inertia> <!-- inertias are tricky to compute -->
+          <!-- http://gazebosim.org/tutorials?tut=inertia&cat=build_robot -->
+          <ixx>26.0016666667</ixx>       <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+          <ixy>0.0</ixy>         <!-- for a box: ixy = 0 -->
+          <ixz>0.0</ixz>         <!-- for a box: ixz = 0 -->
+          <iyy>51.2533333333</iyy>       <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+          <iyz>0.0</iyz>         <!-- for a box: iyz = 0 -->
+          <izz>26.0016666667</izz>       <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+        </inertia>
+      </inertial>
+        <visual name="map_default_visual">
+          <geometry>
+            <mesh><uri>file://map_default.stl</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="map_default_coliision">
+          <geometry>
+            <mesh><uri>file://map_default.stl</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+  </world>
+</sdf>

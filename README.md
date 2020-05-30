@@ -1,8 +1,8 @@
-# anggada
-Anggada - Quadruped Controller ROS Package
+# oped
+oped - Quadruped Controller ROS Package
 
 
-ANGGADA is open source development framework for quadruped robot using Dynamixel AX-12/AX-18 series . This framework is modified from champ library [*"𓃡 CHAMP Quadruped Controller ROS Package"*](https://github.com/chvmp/champ).
+oped is open source development framework for quadruped robot using Dynamixel AX-12/AX-18 series . This framework is modified from champ library [*"𓃡 CHAMP Quadruped Controller ROS Package"*](https://github.com/chvmp/champ).
 
 Core Features:
 - Fully Autonomous (using ROS navigation Stack).
@@ -39,7 +39,7 @@ TESTED ON:
     sudo apt install -y ros-melodic-dynamixel-sdk
     cd <your_ws>/src
     git clone https://github.com/YDLIDAR/ydlidar_ros
-    git clone https://github.com/billynugrahas/anggada
+    git clone https://github.com/billynugrahas/oped_quadruped
     git clone https://github.com/chvmp/champ_teleop
     cd ..
     rosdep install --from-paths src --ignore-src -r -y
@@ -56,7 +56,7 @@ TESTED ON:
         sudo chmod 777 ./*
         sudo sh initenv.sh
      2. udev rules for U2D2 (USB TO DYNAMIXEL 2)
-        cd <your_ws>/src/anggada/hardware_install
+        cd <your_ws>/src/oped/hardware_install
         sudo chmod 777 ./*
         sudo sh u2d2_dynamixel.sh
         

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:property name="base_to_hip_x" value="0.074" /> <!--0.072518-->
+    <xacro:property name="base_to_hip_y" value="0.04177" />
+    <xacro:property name="hip_to_upper_leg_distance" value="0.052" />
+    <xacro:property name="upper_leg_to_lower_leg_distance" value="0.0645" />
+    <xacro:property name="lower_leg_to_foot_distance" value="0.118" />
+
+    <xacro:property name="hip_mesh_path" value="package://oped_description/meshes/hip.dae" />
+    <xacro:property name="hip_mass" value="0.05" />
+    <xacro:property name="hip_x_length" value="0.025" />
+    <xacro:property name="hip_y_length" value="0.0415" />
+    <xacro:property name="hip_z_length" value="0.0485" />
+
+    <xacro:property name="right_upper_leg_mesh_path" value="package://oped_description/meshes/right_upper_leg.dae" />
+    <xacro:property name="left_upper_leg_mesh_path" value="package://oped_description/meshes/left_upper_leg.dae" />
+    <xacro:property name="upper_leg_mass" value="0.025" /> <!--0.12-->
+    <xacro:property name="upper_leg_x_length" value="0.05" />
+    <xacro:property name="upper_leg_y_length" value="0.088" />
+    <xacro:property name="upper_leg_z_length" value="0.0421" />
+
+    <xacro:property name="lower_leg_mesh_path" value="package://oped_description/meshes/lower_leg.dae" /> 
+    <xacro:property name="lower_leg_mass" value="0.025" />
+    <xacro:property name="lower_leg_x_length" value="0.037" />
+    <xacro:property name="lower_leg_y_length" value="0.01351353" />
+    <xacro:property name="lower_leg_z_length" value="0.0503" />
+
+    <xacro:property name="base_mesh_path" value="package://oped_description/meshes/base.dae" />
+    <xacro:property name="base_mass" value="0.4" /> <!--0.65 tanpa kepala-->
+    <xacro:property name="base_x_length" value="0.108" />
+    <xacro:property name="base_y_length" value="0.058" />
+    <xacro:property name="base_z_length" value="0.2" />
+</robot>

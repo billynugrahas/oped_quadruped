@@ -1,0 +1,75 @@
+<robot name="stand">
+
+    <link name="world"/>
+    <link name="origin_link"/>
+    <joint
+        name="world_joint"
+        static="true"
+        type="fixed"
+    >
+
+      <parent link="world"/>
+      <child link="origin_link"/>
+
+    </joint>
+    <link name="stand_link">
+
+        <inertial>
+
+            <mass value="8"/>
+            <inertia
+                ixx="0.031296"
+                ixy="0"
+                ixz="0"
+                iyy="0.031296"
+                iyz="0"
+                izz="0.002592"
+            />
+
+        </inertial>
+        <visual>
+
+            <geometry>
+
+                <box size="0.1 0.1 0.3"
+                />
+
+            </geometry>
+
+        </visual>
+        <collision>
+
+
+            <geometry>
+
+                <box size="0.1 0.1 0.3"
+                />
+
+            </geometry>
+
+        </collision>
+
+    </link>
+    <joint
+        name="origin_joint"
+        type="fixed"
+    >
+
+        <origin xyz="0 0 0"/>
+        <parent link="origin_link"/>
+        <child link="stand_link"/>
+        <axis xyz="0 0 1"/>
+
+    </joint>
+    <gazebo>
+
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" >
+
+            <robotNamespace>/stand</robotNamespace>
+            <controlPeriod>0.001</controlPeriod>
+
+        </plugin>
+
+    </gazebo>
+
+</robot>

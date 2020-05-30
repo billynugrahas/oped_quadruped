@@ -1,0 +1,20 @@
+# knee_orientation : ">>"
+# pantograph_leg : false
+# max_linear_velocity_x : 0.05
+# max_linear_velocity_y : 0.1
+# max_angular_velocity_z : 0.4
+# swing_height : 0.02 #kalau di alfatih z
+# # 0.03
+# stance_depth : 0.0005
+# stance_duration : 0.25 #kalau di alfatih KECEPATAN (y) /depan
+# nominal_height : 0.17 #0.158
+
+knee_orientation : ">>"
+pantograph_leg : false
+max_linear_velocity_x : 0.12 #coba 0.2 #0.1 terbaik
+max_linear_velocity_y : 0.10
+max_angular_velocity_z : 0.5
+swing_height : 0.010
+stance_depth : 0.002
+stance_duration : 0.275
+nominal_height : 0.145
