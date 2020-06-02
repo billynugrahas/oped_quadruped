@@ -50,11 +50,12 @@ TESTED ON:
     sudo apt-get install i2c-tools python-smbus
     
 1.3. Create udev rules
-    1. udev rules for ydlidar
+
+    1 udev rules for ydlidar
         roscd ydlidar_ros/startup
         sudo chmod 777 ./*
         sudo sh initenv.sh
-     2. udev rules for U2D2 (USB TO DYNAMIXEL 2)
+     2 udev rules for U2D2 (USB TO DYNAMIXEL 2)
         cd <your_ws>/src/oped/hardware_install
         sudo chmod 777 ./*
         sudo sh u2d2_dynamixel.sh
