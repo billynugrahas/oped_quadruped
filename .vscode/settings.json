@@ -4,5 +4,9 @@
         "/home/billy/catkin_ws/devel/lib/python2.7/dist-packages",
         "/opt/ros/melodic/lib/python2.7/dist-packages"
     ],
-    "python.pythonPath": "/usr/bin/python"
+    "python.pythonPath": "/usr/bin/python",
+    "files.associations": {
+        "*.ipp": "cpp",
+        "lu": "cpp"
+    }
 }

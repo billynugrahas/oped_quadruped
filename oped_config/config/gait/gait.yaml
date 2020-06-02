@@ -11,10 +11,24 @@
 
 knee_orientation : ">>"
 pantograph_leg : false
-max_linear_velocity_x : 0.12 #coba 0.2 #0.1 terbaik
+max_linear_velocity_x : 0.10 #coba 0.2 #0.1 terbaik
 max_linear_velocity_y : 0.10
 max_angular_velocity_z : 0.5
-swing_height : 0.010
-stance_depth : 0.002
+swing_height : 0.020 #0.10
+stance_depth : 0.003
 stance_duration : 0.275
-nominal_height : 0.145
+nominal_height : 0.13
+
+# 0.145 nominal height swing 0.1 and stance depth 0.003 bagus buat mundur
+
+# knee_orientation : ">>"
+# pantograph_leg : false
+# max_linear_velocity_x : 0.12 #coba 0.2 #0.1 terbaik
+# max_linear_velocity_y : 0.10
+# max_angular_velocity_z : 0.5
+# swing_height : 0.020 #0.10
+# stance_depth : 0.003
+# stance_duration : 0.275
+# nominal_height : 0.13
+
+# # 0.145 nominal height swing 0.1 and stance depth 0.003 bagus buat mundur

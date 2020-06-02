@@ -73,10 +73,22 @@ namespace champ
                                                     } ;
 //WIP
             int16_t leg_joint_offsett[4][3] = {
-                                        0, 82, 243, //ok
-                                        0, 224, -217,
-                                        0, 82, 243, //ok
-                                        0, 234, -232
+                                        0, 79, 237, //ok
+                                        -5, 250, -237, //-217
+                                        -5, 82, 263, //ok 270
+                                        5, 234, -247
+
+                                        //terbaru
+                                        // 0, 79, 237, //ok
+                                        // -15, 250, -217,
+                                        // 0, 82, 243, //ok
+                                        // 0, 234, -232
+
+                                        //awal banget
+                                        // 0, 82, 243, //ok
+                                        // 0, 224, -217,
+                                        // 0, 82, 243, //ok
+                                        // 0, 234, -232
                                        };
 
                       
@@ -141,7 +153,7 @@ namespace champ
                   return 0;
                 }
 
-                //enable torque
+                // //enable torque
                 for (int leg_number = 0; leg_number < 4; leg_number++)
                 {
                     for(int joint_number = 0; joint_number < 3; joint_number++)
@@ -292,17 +304,19 @@ namespace champ
                           
                               //   ROS_INFO("Dynamixel leg %d - joint %d - ID: %d", leg_number, joint_number, dxl_quadruped_servo_address[leg_number][joint_number]);
                               // convert dynamixel goal position value into byte array
-                              if (leg_number == 0 || leg_number == 2)
-                              {
+                              // if (leg_number == 0 || leg_number == 2)
+                              // {
                               // fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %.02f \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]);
                                dxl_goal_position = (((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE) + (512 + leg_joint_offsett[leg_number][joint_number]));
-                              }
-                              else
-                              {
-                              // fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %.02f \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]);
-                               dxl_goal_position = (((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE) + (512 + leg_joint_offsett[leg_number][joint_number]));
-                              fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %d \n", leg_number, joint_number, dxl_goal_position);
-                              }
+                              
+                              // fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %04d \n", leg_number, joint_number, dxl_goal_position);
+                              // }
+                              // else
+                              // {
+                              // // fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %.02f \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]);
+                              //  dxl_goal_position = (((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE) + (512 + leg_joint_offsett[leg_number][joint_number]));
+                              // fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %d \n", leg_number, joint_number, dxl_goal_position);
+                              // }
                               
                               // dxl_goal_position = (((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE + 512) + leg_joint_offsett[leg_number][joint_number]);
 
