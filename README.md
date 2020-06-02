@@ -67,3 +67,29 @@ TESTED ON:
     catkin_make
     source <your_ws/>/devel/setup.bash
     
+ 
+
+## 2. Walking demo in Gazebo:
+2.1.1. Run the base driver and gazebo:
+
+    roslaunch oped_config gazebo.launch rviz:=true
+    
+  You can select the map, just edit the gazebo.launch on oped_gazebo package.
+  
+2.1.2. Run the teleop node:
+
+    roslaunch champ_teleop teleop.launch
+### 2.3. Autonomous Navigation:
+
+2.3.1. Run the Gazebo environment: 
+
+    roslaunch champ_config gazebo.launch 
+
+2.3.2. Run amcl and move_base:
+
+    roslaunch champ_config navigate.launch rviz:=true
+
+To navigate:
+
+- Click '2D Nav Goal'.
+- Click and drag at the position you want the robot to go.
