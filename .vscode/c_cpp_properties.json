@@ -33,7 +33,8 @@
                 "/home/billy/skripsi_ws/src/syncwrite_dynamixel/include/**",
                 "/home/billy/skripsi_ws/src/yocs_velocity_smoother/include/**",
                 "/usr/include/**",
-                "${workspaceFolder}/champ/champ_base/include/libchamp/include"
+                "${workspaceFolder}/champ/champ_base/include/libchamp/include",
+                "${workspaceFolder}/champ/champ_base/src/**"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
