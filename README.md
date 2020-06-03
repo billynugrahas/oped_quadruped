@@ -1,7 +1,7 @@
 # oped
 oped - Quadruped Controller ROS Package
 
-OPED is open source development framework for quadruped robot using Dynamixel AX-12/AX-18 series . This framework is modified from champ library [*"𓃡 CHAMP Quadruped Controller ROS Package"*](https://github.com/chvmp/champ).
+OPED is open source development framework for mammal-type quadruped robot using Dynamixel AX-12/AX-18 series. This framework is based on champ library [*"𓃡 CHAMP Quadruped Controller ROS Package"*](https://github.com/chvmp/champ) (modified some code on `actuator.h`)
 
 Core Features:
 - Fully Autonomous (using ROS navigation Stack).
@@ -12,7 +12,7 @@ Core Features:
 Supported Hardware:
 
 LIDAR:
-- RPLidar A1M8
+- RPLidar A1M8 - WIP
 - YDLIDAR X4
 
 IMU:
@@ -49,7 +49,7 @@ TESTED ON:
 
     sudo apt-get install i2c-tools python-smbus
     
-1.3. Create udev rules
+1.3. Create udev rules (for hardware)
 
     1 udev rules for ydlidar
         roscd ydlidar_ros/startup
