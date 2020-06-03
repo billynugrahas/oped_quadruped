@@ -96,4 +96,4 @@ To navigate:
 - Click '2D Nav Goal'.
 - Click and drag at the position you want the robot to go.
 
-## WIP - need to tune the parameter navigation on oped_config package
+## WIP - need to tune some parameters of amcl, slam, and path planning on oped_config package
