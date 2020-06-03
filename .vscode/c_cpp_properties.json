@@ -32,7 +32,8 @@
                 "/home/billy/skripsi_ws/src/pid/include/**",
                 "/home/billy/skripsi_ws/src/syncwrite_dynamixel/include/**",
                 "/home/billy/skripsi_ws/src/yocs_velocity_smoother/include/**",
-                "/usr/include/**",
+                "/usr/include/**"
+                "/home/billy/skripsi_ws/src/oped_quadruped/champ/champ_base/include/libchamp/include/**",
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
