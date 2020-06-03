@@ -71,6 +71,7 @@ namespace champ
                                                     LHH_SERVO_ID, LHU_SERVO_ID, LHL_SERVO_ID,
                                                     RHH_SERVO_ID, RHU_SERVO_ID, RHL_SERVO_ID
                                                     } ;
+
 //WIP
             int16_t leg_joint_offsett[4][3] = {
                                         0, 79, 237, //ok
