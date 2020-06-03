@@ -1,7 +1,9 @@
 # oped
 oped - Quadruped Controller ROS Package
 
-OPED is open source development framework for mammal-type quadruped robot using Dynamixel AX-12/AX-18 series. This framework is based on champ library [*"𓃡 CHAMP Quadruped Controller ROS Package"*](https://github.com/chvmp/champ) (modified some code on `actuator.h`)
+OPED is open source development framework for mammal-type quadruped robot using Dynamixel AX-12/AX-18 series. This framework is based on champ library [*"𓃡 CHAMP Quadruped Controller ROS Package"*](https://github.com/chvmp/champ).
+
+The software has been modified to control the robot's joint using Dynamixel AX-12/AX-18 series as the actuator. `
 
 Core Features:
 - Fully Autonomous (using ROS navigation Stack).
@@ -39,7 +41,6 @@ TESTED ON:
     cd <your_ws>/src
     git clone https://github.com/YDLIDAR/ydlidar_ros
     git clone https://github.com/billynugrahas/oped_quadruped
-    git clone https://github.com/chvmp/champ_teleop
     cd ..
     rosdep install --from-paths src --ignore-src -r -y
     
@@ -78,7 +79,7 @@ TESTED ON:
   
 2.1.2. Run the teleop node:
 
-    roslaunch champ_teleop teleop.launch
+    roslaunch oped_teleop teleop.launch
 
 ### 2.3. Autonomous Navigation:
 
