@@ -8,6 +8,7 @@
     "files.associations": {
         "*.ipp": "cpp",
         "lu": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
     
 }

@@ -32,6 +32,9 @@
                 "/home/billy/skripsi_ws/src/pid/include/**",
                 "/home/billy/skripsi_ws/src/syncwrite_dynamixel/include/**",
                 "/home/billy/skripsi_ws/src/yocs_velocity_smoother/include/**",
+                "/home/billy/skripsi_ws/src/oped_quadruped/champ/champ_base/**",
+                "/home/billy/skripsi_ws/src/oped_quadruped/champ/champ_base/src/",
+                "/home/billy/skripsi_ws/src/oped_quadruped/champ/champ_base/include/",
                 "/usr/include/**",
                 "${workspaceFolder}/champ/champ_base/include/libchamp/include",
                 "${workspaceFolder}/champ/champ_base/src/**"

@@ -90,7 +90,7 @@
     #define DXL_MOVING_SPEED                300
     // #define DXL_MOVING_SPEED                500
 
-    #define DEG_TO_PULSE                    3.413333333
+    #define DEG_TO_PULSE                    3.41 //3.413333333
     #define PULSE_TO_DEG                    0.29296875
     #define HALF_RANGE                      150                 // to re-map -HALF_RANGE TO +HALF_RANGE as 0 TO +(HALF_RANGE*2). dynamixel AX-12 Range: 300 degree. so it convert -150~150 into 0~300.
 

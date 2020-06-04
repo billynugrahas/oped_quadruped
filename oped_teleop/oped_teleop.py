@@ -19,7 +19,7 @@ class Teleop:
         self.pose_publisher = rospy.Publisher('cmd_pose', Pose, queue_size = 1)
         self.joy_subscriber = rospy.Subscriber('joy', Joy, self.joy_callback)
 
-        self.speed = rospy.get_param("~speed", 0.5)
+        self.speed = rospy.get_param("~speed", 0.2)
         self.turn = rospy.get_param("~turn", 1.0)
 
         self.msg = """
@@ -97,9 +97,9 @@ CTRL-C to quit
         body_pose = Pose()
         body_pose.x = 0
         body_pose.y = 0
-        body_pose.roll = (not data.buttons[5]) *-data.axes[3] * 0.349066
-        body_pose.pitch = data.axes[4] * 0.261799
-        body_pose.yaw = data.buttons[5] * data.axes[3] * 0.436332
+        body_pose.roll = (not data.buttons[5]) *-data.axes[3]* 0.1 #* 0.349066
+        body_pose.pitch = data.axes[4] * 0.1 #0.261799
+        body_pose.yaw = data.buttons[5] * data.axes[3] * 0.1 #0.436332
         if data.axes[5] < 0:
             body_pose.z = self.map(data.axes[5], 0, -1.0, 1, 0.00001)
         else:
@@ -146,6 +146,10 @@ CTRL-C to quit
                     
                 elif key in self.poseBindings.keys():
                     #TODO: changes these values as rosparam
+                    #roll += 0.0174533 * self.poseBindings[key][0]
+                    #pitch += 0.0174533 * self.poseBindings[key][1]
+                    #yaw += 0.0174533 * self.poseBindings[key][2]
+
                     roll += 0.0174533 * self.poseBindings[key][0]
                     pitch += 0.0174533 * self.poseBindings[key][1]
                     yaw += 0.0174533 * self.poseBindings[key][2]
