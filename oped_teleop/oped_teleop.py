@@ -71,6 +71,7 @@ CTRL-C to quit
                 'b':(0,-1,0,0),
                 'r':(0,0,1,0),
                 'y':(0,0,-1,0),
+                'g':(0,0,0,0),
             }
 
         self.speedBindings={
@@ -97,9 +98,9 @@ CTRL-C to quit
         body_pose = Pose()
         body_pose.x = 0
         body_pose.y = 0
-        body_pose.roll = (not data.buttons[5]) *-data.axes[3]* 0.1 #* 0.349066
-        body_pose.pitch = data.axes[4] * 0.1 #0.261799
-        body_pose.yaw = data.buttons[5] * data.axes[3] * 0.1 #0.436332
+        body_pose.roll = (not data.buttons[5]) *-data.axes[3]* 0.001 #0.349066 #20 degree
+        body_pose.pitch = data.axes[4] * 0.001 #0.261799 # 15 degree
+        body_pose.yaw = data.buttons[5] * data.axes[3] * 0.001 #0.436332 #25 degree
         if data.axes[5] < 0:
             body_pose.z = self.map(data.axes[5], 0, -1.0, 1, 0.00001)
         else:
@@ -146,26 +147,23 @@ CTRL-C to quit
                     
                 elif key in self.poseBindings.keys():
                     #TODO: changes these values as rosparam
-                    #roll += 0.0174533 * self.poseBindings[key][0]
-                    #pitch += 0.0174533 * self.poseBindings[key][1]
-                    #yaw += 0.0174533 * self.poseBindings[key][2]
+                    roll += 0.00523599 * self.poseBindings[key][0] #0.1 degree
+                    pitch += 0.00523599 * self.poseBindings[key][1] #0.1 degree
+                    yaw += 0.00523599 * self.poseBindings[key][2]#0.1 degree
 
-                    roll += 0.0174533 * self.poseBindings[key][0]
-                    pitch += 0.0174533 * self.poseBindings[key][1]
-                    yaw += 0.0174533 * self.poseBindings[key][2]
-
-                    roll = np.clip(roll, -0.523599, 0.523599)
-                    pitch = np.clip(pitch, -0.349066, 0.349066)
-                    yaw = np.clip(yaw, -0.436332, 0.436332)
+                    roll = np.clip(roll, -0.349066, 0.349066) #30 degree
+                    pitch = np.clip(pitch, -0.247837, 0.349066) #20 degree
+                    yaw = np.clip(yaw, -0.349066, 0.349066) #25 degree
 
                     if cmd_attempts > 1:
                         body_pose = Pose()
                         body_pose.x = 0
                         body_pose.y = 0
-                        body_pose.z = 0
+                        body_pose.z = 1
                         body_pose.roll = roll
                         body_pose.pitch = pitch
                         body_pose.yaw = yaw
+                        print ("publish:\troll %f\tpitch %f\tyaw %f " % (roll,pitch,yaw))
                         self.pose_publisher.publish(body_pose)
 
                     cmd_attempts += 1
@@ -216,5 +214,5 @@ CTRL-C to quit
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
 if __name__ == "__main__":
-    rospy.init_node('champ_teleop')
+    rospy.init_node('oped_teleop')
     teleop = Teleop()

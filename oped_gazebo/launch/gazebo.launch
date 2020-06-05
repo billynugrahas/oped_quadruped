@@ -10,7 +10,7 @@
     <!-- this should be only called once on multi-robot simulation -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(find oped_gazebo)/worlds/map_default_set.world"/>
-        <!-- <arg name="world_name" value="$(find oped_gazebo)/worlds/outdoor.world"/> -->
+        <!-- <arg name="world_name" value="$(find oped_gazebo)/worlds/outdoor.world"/>? -->
         <arg name="gui" value="$(arg gui)" />
         <arg name="paused" value="$(arg paused)"/>
         <arg name="use_sim_time" value="true"/>
@@ -19,7 +19,7 @@
 
     <group ns="$(arg robot_name)">
         <!-- remember to define initial position of robot on multi-robot simulation -->
-        <node  name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -model oped -param robot_description -robot_namespace $(arg robot_name) -z 0.24" />
+        <node  name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -model oped -param robot_description -robot_namespace $(arg robot_name) -z 0.22" />
         <!-- <node  name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -model oped -param robot_description -robot_namespace $(arg robot_name) -z 0.15" /> -->
 
         <rosparam file="$(arg ros_control_file)" command="load"/>
