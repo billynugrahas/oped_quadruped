@@ -70,7 +70,7 @@ TESTED ON:
     
  
 
-## 2. Walking demo in Gazebo:
+## 2. Walking demo in Gazebo (using champ's robot model):
 2.1.1. Run the base driver and gazebo:
 
     roslaunch oped_config gazebo.launch rviz:=true
@@ -85,11 +85,11 @@ TESTED ON:
 
 2.3.1. Run the Gazebo environment: 
 
-    roslaunch oped_config gazebo.launch rviz:=true
+     roslaunch oped_config test_gazebo_stable.launch
 
 2.3.2. Run amcl and move_base:
 
-    roslaunch oped_config navigate.launch rviz:=true
+    roslaunch oped_config test_navigate_stable.launch rviz:=true
 
 To navigate:
 
@@ -97,3 +97,12 @@ To navigate:
 - Click and drag at the position you want the robot to go.
 
 ## WIP - need to tune some parameters of amcl, slam, and path planning on oped_config package
+## WIP - autonomous navigation on maze using champ's robot model
+roslaunch oped_config gazebo_stable.launch
+roslaunch oped_config navigate_stable.launch rviz:=true
+
+## WIP - autonomous navigation on maze using my own robot
+roslaunch oped_config gazebo.launch
+roslaunch oped_config navigate.launch rviz:=true
+
+
