@@ -165,6 +165,20 @@ CTRL-C to quit
                         body_pose.yaw = yaw
                         print ("publish:\troll %f\tpitch %f\tyaw %f " % (roll,pitch,yaw))
                         self.pose_publisher.publish(body_pose)
+                    
+                    if key == 'g':
+                        body_pose = Pose()
+                        body_pose.x = 0
+                        body_pose.y = 0
+                        body_pose.z = 1
+                        roll = 0
+                        pitch = 0
+                        yaw = 0
+                        body_pose.roll = roll
+                        body_pose.pitch = pitch
+                        body_pose.yaw = yaw
+                        print ("g key ! - publish:\troll %f\tpitch %f\tyaw %f " % (roll,pitch,yaw))
+                        self.pose_publisher.publish(body_pose)
 
                     cmd_attempts += 1
 
