@@ -154,17 +154,6 @@ CTRL-C to quit
                     roll = np.clip(roll, -0.349066, 0.349066) #30 degree
                     pitch = np.clip(pitch, -0.247837, 0.349066) #20 degree
                     yaw = np.clip(yaw, -0.349066, 0.349066) #25 degree
-
-                    if cmd_attempts > 1:
-                        body_pose = Pose()
-                        body_pose.x = 0
-                        body_pose.y = 0
-                        body_pose.z = 1
-                        body_pose.roll = roll
-                        body_pose.pitch = pitch
-                        body_pose.yaw = yaw
-                        print ("publish:\troll %f\tpitch %f\tyaw %f " % (roll,pitch,yaw))
-                        self.pose_publisher.publish(body_pose)
                     
                     if key == 'g':
                         body_pose = Pose()
@@ -178,6 +167,17 @@ CTRL-C to quit
                         body_pose.pitch = pitch
                         body_pose.yaw = yaw
                         print ("g key ! - publish:\troll %f\tpitch %f\tyaw %f " % (roll,pitch,yaw))
+                        self.pose_publisher.publish(body_pose)
+                        
+                    elif cmd_attempts > 1:
+                        body_pose = Pose()
+                        body_pose.x = 0
+                        body_pose.y = 0
+                        body_pose.z = 1
+                        body_pose.roll = roll
+                        body_pose.pitch = pitch
+                        body_pose.yaw = yaw
+                        print ("publish:\troll %f\tpitch %f\tyaw %f " % (roll,pitch,yaw))
                         self.pose_publisher.publish(body_pose)
 
                     cmd_attempts += 1
