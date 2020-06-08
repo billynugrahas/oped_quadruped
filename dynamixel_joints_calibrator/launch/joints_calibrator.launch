@@ -1,0 +1,3 @@
+<launch>
+    <node name="dynamixel_joints_calibrator" pkg="dynamixel_joints_calibrator" type="joints_calibrator.py" output="screen" required="true"/>
+</launch>

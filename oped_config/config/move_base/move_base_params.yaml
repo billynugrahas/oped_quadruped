@@ -1,7 +1,7 @@
 base_global_planner: global_planner/GlobalPlanner
 base_local_planner: dwa_local_planner/DWAPlannerROS
 
-GlobalPlanner/use_dijkstra: true #false
+GlobalPlanner/use_dijkstra: true #set false to A*
 GlobalPlanner/visualize_potential: true
 GlobalPlanner/use_grid_path: false
 GlobalPlanner/old_navfn_behavior: false #gaktau

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-#credits to: https://github.com/ros-teleop/teleop_twist_keyboard/blob/master/teleop_twist_keyboard.py
+#credits to: https://github.com/ros-teleop/teleop_twist_keyboard/blob/master/teleop_twist_keyboard.py and https://github.com/chvmp/champ_teleop
 
 from __future__ import print_function
 
-import roslib; roslib.load_manifest('champ_teleop')
+import roslib; roslib.load_manifest('oped_teleop')
 import rospy
 
 from sensor_msgs.msg import Joy
