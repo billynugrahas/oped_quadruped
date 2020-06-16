@@ -2,8 +2,8 @@
     <arg name="robot_name"       default="/"/>
     <arg name="rviz"             default="false"/>
     <arg name="lite"             default="false" />
+    <!-- <arg name="ros_control_file" default="$(find oped_config)/config/ros_control/gazebo/ros_control_oped.yaml" /> -->
     <arg name="ros_control_file" default="$(find oped_config)/config/ros_control/gazebo/ros_control.yaml" />
-    <!-- <arg name="ros_control_file" default="$(find oped_config)/config/ros_control/gazebo/ros_control.yaml" /> -->
 
     <param name="use_sim_time" value="true" />
 
@@ -14,10 +14,10 @@
         <arg name="rviz"       value="$(arg rviz)"/>
         <arg name="joints_map_file"  value="$(find oped_config)/config/joints/joints.yaml"/>
         <arg name="links_map_file"   value="$(find oped_config)/config/links/links.yaml"/>
-        <arg name="gait_config_file" value="$(find oped_config)/config/gait/gait.yaml"/>
-        <!-- <arg name="gait_config_file" value="$(find oped_config)/config/gait/gazebo/gait.yaml"/> -->
-        <arg name="description_file" value="$(find oped_description)/urdf/oped.urdf"/>
-        <!-- <arg name="description_file" value="$(find oped_description)/urdf/gazebo/champ.urdf"/> -->
+        <!-- <arg name="gait_config_file" value="$(find oped_config)/config/gait/gait.yaml"/> -->
+        <arg name="gait_config_file" value="$(find oped_config)/config/gait/gazebo/gait.yaml"/>
+        <!-- <arg name="description_file" value="$(find oped_description)/urdf/oped.urdf"/> -->
+        <arg name="description_file" value="$(find oped_description)/urdf/gazebo/champ.urdf"/>
 
     </include>
 

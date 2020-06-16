@@ -13,9 +13,9 @@
         <origin xyz="0.0 0.0 ${base_z_length / 2 + 0.04}" rpy="0 0 0"/>
     </xacro:hokuyo_utm30lx> -->
     
-    <!-- <gazebo reference="hokuyo_frame">
+    <gazebo reference="hokuyo_frame">
 		<material>Gazebo/FlatBlack</material>
-	</gazebo> -->
+	</gazebo>
 
 
     <gazebo reference="lidar_frame">

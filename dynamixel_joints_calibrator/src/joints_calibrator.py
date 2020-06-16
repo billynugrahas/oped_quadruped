@@ -289,7 +289,18 @@ CTRL-C to quit
         elif orientation == 1:
             print ("""++ Your new Hind joints offsett: ++""")
         print (temp_joint_offsett)
-        
+
+        print ("Current leg joint offsett: (After added leg_joint_offsett)")
+        print ("Leg 1: %d %d %d" % (temp_joint_offsett[0][0]+leg_joint_offsett[0][0], temp_joint_offsett[0][1]+leg_joint_offsett[0][1], temp_joint_offsett[0][2]+leg_joint_offsett[0][2]))
+        print ("Leg 2: %d %d %d" % (temp_joint_offsett[1][0]+leg_joint_offsett[1][0], temp_joint_offsett[1][1]+leg_joint_offsett[1][1], temp_joint_offsett[1][2]+leg_joint_offsett[1][2]))
+        print ("Leg 3: %d %d %d" % (temp_joint_offsett[2][0]+leg_joint_offsett[2][0], temp_joint_offsett[2][1]+leg_joint_offsett[2][1], temp_joint_offsett[2][2]+leg_joint_offsett[2][2]))
+        print ("Leg 4: %d %d %d" % (temp_joint_offsett[3][0]+leg_joint_offsett[3][0], temp_joint_offsett[3][1]+leg_joint_offsett[3][1], temp_joint_offsett[3][2]+leg_joint_offsett[3][2]))
+        # # WIP - print temp_joint_offsett + leg_joint_offsett
+        # leg_joint_offsett           = [[0, 79, 237],             #leg_joint_offsett
+        #                        [-5, 240, -260],
+        #                        [5, 82, 263],
+        #                        [5, 234, -267]]
+
         print ("===========================")
         print ("Enter : return to main menu")
         print ("ESC   : quit")

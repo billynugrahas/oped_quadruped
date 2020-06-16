@@ -4,6 +4,9 @@ global_costmap:
   update_frequency: 1.0 #before: 5.0
   publish_frequency: 0.5 #before 0.5
   static_map: true
+  rolling_window: false
+
   transform_tolerance: 0.5
-  cost_scaling_factor: 10.0
-  inflation_radius: 0.12
+  cost_scaling_factor: 2.58
+  # inflation_radius: 0.55
+  inflation_radius:  0.1 #0.55

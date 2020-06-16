@@ -33,6 +33,6 @@
         <param name="resample_interval" value="1"/> <!-- Number of filter updates required before resampling. -->
         <param name="transform_tolerance" value="0.1"/> <!-- 1.25 Default 0.1; time with which to post-date the transform that is published, to indicate that this transform is valid into the future. -->
         <param name="update_min_a" value="0.1"/> <!-- Rotational movement required before performing a filter update. 0.1 represents 5.7 degrees  -->
-        <param name="update_min_d" value="0.002"/> <!-- Translational movement required before performing a filter update. -->
+        <param name="update_min_d" value="0.1"/> <!-- Translational movement required before performing a filter update. -->
     </node>
 </launch>

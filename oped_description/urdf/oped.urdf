@@ -25,8 +25,8 @@
   <link name="base_inertia">
     <inertial>
       <origin xyz="0 0 0"/>
-      <mass value="0.4"/>
-      <inertia ixx="0.00144546666667" ixy="0.0" ixz="0.0" iyy="0.00172213333333" iyz="0.0" izz="0.000500933333333"/>
+      <mass value="0.7"/>
+      <inertia ixx="0.00252956666667" ixy="0.0" ixz="0.0" iyy="0.00301373333333" iyz="0.0" izz="0.000876633333333"/>
     </inertial>
   </link>
   <joint name="base_link_to_base_inertia" type="fixed">

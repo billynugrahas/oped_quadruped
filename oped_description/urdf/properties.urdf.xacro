@@ -26,7 +26,7 @@
     <xacro:property name="lower_leg_z_length" value="0.0503" />
 
     <xacro:property name="base_mesh_path" value="package://oped_description/meshes/base.dae" />
-    <xacro:property name="base_mass" value="0.4" /> <!--0.65 tanpa kepala-->
+    <xacro:property name="base_mass" value="0.7" /> <!--0.65 tanpa kepala-->
     <xacro:property name="base_x_length" value="0.108" />
     <xacro:property name="base_y_length" value="0.058" />
     <xacro:property name="base_z_length" value="0.2" />

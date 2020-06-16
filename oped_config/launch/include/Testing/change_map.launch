@@ -1,14 +1,19 @@
 <launch>
-    <arg name="frame_prefix" default=""/>
-
-    <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    
+  <arg name="map_file" default="$(find oped_navigation)/maps/map_default_scale_1_3.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+​
+  <arg name="use_map_topic" default="true"/>
+  <arg name="scan_topic" default="scan" />
+​
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
         <param name="initial_pose_a" value="0.0"/>
         <param name="use_map_topic" value="true"/>
         <param name="base_frame_id" value="/base_footprint"/>
         <param name="odom_frame_id" value="/odom"/>
         <param name="global_frame_id" value="/map"/>
         <param name="transform_broadcast" value="true"/>
-        <param name="gui_publish_rate" value="-1.0"/> <!-- 10.0 Maximum rate (Hz) at which scans and paths are published for visualization, -1.0 to disable. -->
+        <param name="gui_publish_rate" value="10.0"/> <!-- 10.0 Maximum rate (Hz) at which scans and paths are published for visualization, -1.0 to disable. -->
         <param name="kld_err" value="0.04"/>
         <param name="kld_z" value="0.99"/>
         <param name="laser_lambda_short" value="0.1"/>
@@ -33,6 +38,7 @@
         <param name="resample_interval" value="1"/> <!-- Number of filter updates required before resampling. -->
         <param name="transform_tolerance" value="0.1"/> <!-- 1.25 Default 0.1; time with which to post-date the transform that is published, to indicate that this transform is valid into the future. -->
         <param name="update_min_a" value="0.1"/> <!-- Rotational movement required before performing a filter update. 0.1 represents 5.7 degrees  -->
-        <param name="update_min_d" value="0.002"/> <!-- Translational movement required before performing a filter update. -->
+        <param name="update_min_d" value="0.1"/> <!-- Translational movement required before performing a filter update. -->
     </node>
+​
 </launch>
