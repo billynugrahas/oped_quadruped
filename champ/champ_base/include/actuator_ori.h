@@ -66,44 +66,30 @@ namespace champ
             //                                         RHH_SERVO_ID, RHU_SERVO_ID, RHL_SERVO_ID
             //                                         } ;
             int dxl_quadruped_servo_address[4][3] = {
-                                                    // // ORI
-                                                    // LFH_SERVO_ID, LFU_SERVO_ID, LFL_SERVO_ID,
-                                                    // RFH_SERVO_ID, RFU_SERVO_ID, RFL_SERVO_ID,
-                                                    // LHH_SERVO_ID, LHU_SERVO_ID, LHL_SERVO_ID,
-                                                    // RHH_SERVO_ID, RHU_SERVO_ID, RHL_SERVO_ID
-
-                                                    // ORI
                                                     LFH_SERVO_ID, LFU_SERVO_ID, LFL_SERVO_ID,
                                                     RFH_SERVO_ID, RFU_SERVO_ID, RFL_SERVO_ID,
-                                                    RHH_SERVO_ID, RHU_SERVO_ID, RHL_SERVO_ID,
-                                                    LHH_SERVO_ID, LHU_SERVO_ID, LHL_SERVO_ID
+                                                    LHH_SERVO_ID, LHU_SERVO_ID, LHL_SERVO_ID,
+                                                    RHH_SERVO_ID, RHU_SERVO_ID, RHL_SERVO_ID
                                                     } ;
 
 //WIP
             int16_t leg_joint_offsett[4][3] = {
-                                        // //ukuran besar X
-                                        // 9, 52, 227,
-                                        // -11, 259, -204,
-                                        // -11, 259, -186,
-                                        // 9, 46, 173
+                                        9, 46, 251, //ok
+                                        -11, 259, -250, //-217
+                                        10, 71, 247, //ok 270
+                                        -10, 201, -238
 
-                                        // //ukuran besar X
-                                        9, 46, 251,
-                                        -11, 259, -250,
-                                        -11, 259, -250,
-                                        9, 46, 251
-
-                                        // // ukuran mini
-                                        // 512 + 15, 512 + 79,   512 +  182, //ok
-                                        // 512 -20,  512 + 220,  512 - 165, //-217
-                                        // 512 + 10, 512 - 105,   512 +  149, //ok 270
-                                        // 512 -10,  512 + 402,  512 - 161
-
-                                        //OK ori
+                                        // //OK ori
                                         // 15, 79, 182, //ok
                                         // -20, 220, -165, //-217
                                         // 10, 92, 208, //ok 270
                                         // -10, 204, -202
+
+                                        //X ORIENTATION
+                                        // 512 + 15, 512 + 79,   512 +  182, //ok
+                                        // 512 -20,  512 + 220,  512 - 165, //-217
+                                        // 512 + 10, 512 - 105,   512 +  149, //ok 270
+                                        // 512 -10,  512 + 402,  512 - 161
 
                                         // 0, 79, 237, //ok
                                         // -5, 240, -260, //-217
@@ -346,26 +332,13 @@ namespace champ
                               // {
                               // fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %.02f \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]);
                               //  dxl_goal_position = (((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE) + leg_joint_offsett[leg_number][joint_number]); //normal
-                              
-                              // ukuran kecil
-                              //  if ( (leg_number == 3) || (leg_number == 2) )
+                              //  if ( (leg_number == 3 && joint_number == 2) || (leg_number == 2 && joint_number == 2) )
                               //  {
                               //    dxl_goal_position = leg_joint_offsett[leg_number][joint_number] - ((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE);
                               //    fprintf(stderr, "leg_number : %d joint : %d leg_joint = %0.2f dxl_goal = %d \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]*RAD_TO_DEG*DEG_TO_PULSE, dxl_goal_position);
                               //  }
                               //  else 
-                              //  dxl_goal_position = leg_joint_offsett[leg_number][joint_number] + ((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE); //normal
-                             
-                               if (joint_number == 0 && (leg_number == 1 || leg_number == 2))
-                               {
-                                 dxl_goal_position = 512 + leg_joint_offsett[leg_number][joint_number] - ((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE);
-                                //  fprintf(stderr, "leg_number : %d joint : %d leg_joint = %0.2f dxl_goal = %d \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]*RAD_TO_DEG*DEG_TO_PULSE, dxl_goal_position);
-                               }
-                               else
                                dxl_goal_position = 512 + leg_joint_offsett[leg_number][joint_number] + ((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE); //normal
-                               if (leg_number == 2 && joint_number == 0) fprintf(stderr, "leg_number : %d joint : %d leg_joint = %0.2f dxl_goal = %d \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]*RAD_TO_DEG*DEG_TO_PULSE, dxl_goal_position);
-                              
-                              
                               // fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %04d \n", leg_number, joint_number, dxl_goal_position);
                               // }
                               // else

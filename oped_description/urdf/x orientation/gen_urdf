@@ -1,0 +1,6 @@
+#!/usr/bin/env bash                                                             
+
+set -e
+rosrun xacro xacro oped.urdf.xacro > oped.urdf
+
+

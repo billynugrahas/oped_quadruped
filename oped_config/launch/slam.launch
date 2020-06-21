@@ -15,6 +15,7 @@
             <arg name="frame_prefix" value="$(arg frame_prefix)"/>
             <arg name="robot_name"   value="$(arg robot_name)"/>
         </include>
+        <!-- <include file="$(find oped_config)/launch/tb3_move_base.launch"/> -->
 
         <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz"
             args="-d $(find oped_navigation)/rviz/navigate.rviz -f $(arg frame_prefix)map"

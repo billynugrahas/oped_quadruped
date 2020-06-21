@@ -48,13 +48,13 @@ RFH_SERVO_ID                = 0
 RFU_SERVO_ID                = 1
 RFL_SERVO_ID                = 2
 
-LHH_SERVO_ID                = 6
-LHU_SERVO_ID                = 7
-LHL_SERVO_ID                = 8
+LHH_SERVO_ID                = 9
+LHU_SERVO_ID                = 10
+LHL_SERVO_ID                = 11
 
-RHH_SERVO_ID                = 9
-RHU_SERVO_ID                = 10
-RHL_SERVO_ID                = 11
+RHH_SERVO_ID                = 6
+RHU_SERVO_ID                = 7
+RHL_SERVO_ID                = 8
 
 
 dxl_quadruped_servo_address = [[LFH_SERVO_ID, LFU_SERVO_ID, LFL_SERVO_ID],
@@ -68,11 +68,17 @@ dxl_quadruped_servo_address = [[LFH_SERVO_ID, LFU_SERVO_ID, LFL_SERVO_ID],
 #                                [5, 82, 263],
 #                                [5, 234, -267]]
 
-# # 
-leg_joint_offsett           = [[9, 46, 251],             #leg_joint_offsett
-                               [-11, 259, -258],
-                               [10, 71, 247],
-                               [-10, 201, -238]]
+# # X ORIENTATION TERBARU
+leg_joint_offsett           = [[9, 52, 227],             #leg_joint_offsett
+                               [-11, 259, -204],
+                               [-11, 259, -186],
+                               [9, 46, 173]]
+
+# # FIX TERBARU
+# leg_joint_offsett           = [[9, 46, 251],             #leg_joint_offsett
+#                                [-11, 259, -258],
+#                                [10, 71, 247],
+#                                [-10, 201, -238]]
 
 # # # OK
 # leg_joint_offsett           = [[15, 79, 182],             #leg_joint_offsett

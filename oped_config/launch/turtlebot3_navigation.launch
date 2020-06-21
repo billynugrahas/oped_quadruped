@@ -1,0 +1,28 @@
+<launch>
+    <arg name="robot_name" default="/"/>
+    <arg name="rviz"       default="false"/>
+
+    <arg if="$(eval arg('robot_name') == '/')"  name="frame_prefix" value="" />
+    <arg unless="$(eval arg('robot_name') == '/')" name="frame_prefix" value="$(arg robot_name)/" />
+
+    <group ns="$(arg robot_name)">
+        <!-- Map server -->
+        <!-- <arg name="map_file" default="$(find champ_navigation)/maps/map.yaml"/> -->
+        <!-- <arg name="map_file" default="$(find oped_navigation)/maps/map_default.yaml"/> -->
+        <!-- <arg name="map_file" default="$(find oped_navigation)/maps/map_default_scale_2.yaml"/> -->
+        <arg name="map_file" default="$(find oped_navigation)/maps/map_default_scale_1_3.yaml"/>
+        <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" >
+            <param name="frame_id" value="$(arg frame_prefix)map" />
+        </node>
+        <!-- AMCL used for localization -->
+        <!-- <include file="$(find oped_config)/launch/include/amcl.launch"/> -->
+        <include file="$(find oped_config)/launch/tb3_amcl.launch"/>
+        <!-- Calls navigation stack -->
+        <!-- <include file="$(find oped_config)/launch/include/move_base.launch"/> -->
+        <include file="$(find oped_config)/launch/tb3_move_base.launch"/>
+        
+        <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz"
+            args="-d $(find oped_navigation)/rviz/turtlebot3_navigation.rviz -f $(arg frame_prefix)map"
+            output="screen"/>
+    </group>
+</launch>
