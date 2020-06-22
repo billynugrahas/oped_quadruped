@@ -10,6 +10,7 @@
     <arg name="has_imu"          default="true" />
     <arg name="lite"             default="false" />
     <arg name="laser"            default="sim" />
+    <arg name="sbc"              default="false" />
 
     <group ns="$(arg robot_name)">
         <param name="tf_prefix" value="$(arg robot_name)"/>
@@ -23,6 +24,10 @@
         <include if="$(arg lite)" file="$(find champ_base)/launch/message_relays.launch">
             <arg name="gazebo"          value="$(arg gazebo)"/>
             <arg name="has_imu"         value="$(arg has_imu)" />
+        </include>
+
+        <include if="$(arg sbc)" file="$(find oped_bringup)/launch/sbc_imu.launch">
+            
         </include>
 
         <include file="$(find champ_description)/launch/description.launch">

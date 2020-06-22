@@ -10,6 +10,7 @@
     <arg name="has_imu"          default="true" />
     <arg name="lite"             default="false" />
     <arg name="laser"            default="sim"/>
+    <arg name="sbc"              default="false"/>
 
     <include file="$(find oped_bringup)/launch/bringup.launch">
         <arg name="robot_name"       value="$(arg robot_name)"/>
@@ -23,6 +24,7 @@
         <arg name="laser"            value="$(arg laser)"/>
         <arg name="rviz"             value="$(arg rviz)"/>
         <arg name="base_frame"       value="$(arg robot_name)/$(arg base_frame)"/>
+        <arg name="sbc"              value="$(arg sbc)"/>
     </include>
 
     <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_laser" args="0 0 0 0 0 0 /base_link /laser" />
