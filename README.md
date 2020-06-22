@@ -46,9 +46,10 @@ TESTED ON:
     
     
 
-1.2. [On RaspberryPi] Install i2c dev
+1.2. [On RaspberryPi] Install i2c dev and imu_tools
 
     sudo apt-get install i2c-tools python-smbus
+    sudo apt-get install ros-melodic-imu-tools
     
 1.3. Create udev rules (for hardware)
 
