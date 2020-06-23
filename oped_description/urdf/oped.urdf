@@ -11,13 +11,13 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://oped_description/meshes/base.dae"/>
+        <mesh filename="package://oped_description/meshes/base_x.dae"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://oped_description/meshes/base.dae"/>
+        <mesh filename="package://oped_description/meshes/base_x.dae"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -100,17 +100,17 @@
   <joint name="scan_joint" type="fixed">
     <parent link="base_link"/>
     <child link="lidar_frame"/>
-    <origin rpy="0 0 0" xyz="0 0 0.077"/>
+    <origin rpy="0 0 0" xyz="-0.007 0 0.077"/>
   </joint>
   <link name="lidar_frame">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 -0.077"/>
+      <origin rpy="0 0 0" xyz="0.007 0 -0.067"/>
       <geometry>
-        <mesh filename="package://oped_description/meshes/ydlidar_x4.dae"/>
+        <mesh filename="package://oped_description/meshes/rplidar.dae"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.007 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.01"/>
       <geometry>
         <cylinder length="0.0315" radius="0.035"/>
       </geometry>
@@ -226,7 +226,7 @@
   <joint name="lf_debug_joint" type="fixed">
     <parent link="base_link"/>
     <child link="lf_hip_debug_link"/>
-    <origin rpy="0 0 0" xyz="0.074 0.04177 0"/>
+    <origin rpy="0 0 0" xyz="0.099 0.04177 0"/>
   </joint>
   <joint name="lf_hip_joint" type="revolute">
     <axis xyz="1 0 0"/>
@@ -234,7 +234,7 @@
     <!-- <limit effort="25" lower="-0.68" upper="0.68" velocity="1.5" /> -->
     <parent link="base_link"/>
     <child link="lf_hip_link"/>
-    <origin rpy="0 0 0" xyz="0.074 0.04177 0"/>
+    <origin rpy="0 0 0" xyz="0.099 0.04177 0"/>
   </joint>
   <joint name="lf_upper_leg_joint" type="revolute">
     <axis xyz="0 1 0"/>
@@ -316,13 +316,13 @@
       <inertia ixx="1.98258541667e-05" ixy="0.0" ixz="0.0" iyy="8.90085416667e-06" iyz="0.0" izz="2.13416666667e-05"/>
     </inertial>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/left_upper_leg.dae"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/left_upper_leg.dae"/>
       </geometry>
@@ -339,13 +339,13 @@
       <inertia ixx="5.65146977721e-06" ixy="0.0" ixz="0.0" iyy="8.12310416667e-06" iyz="0.0" izz="3.23253227721e-06"/>
     </inertial>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/lower_leg.dae"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/lower_leg.dae"/>
       </geometry>
@@ -365,7 +365,7 @@
   <joint name="lh_debug_joint" type="fixed">
     <parent link="base_link"/>
     <child link="lh_hip_debug_link"/>
-    <origin rpy="0 0 0" xyz="-0.07 0.04177 0"/>
+    <origin rpy="0 0 0" xyz="-0.095 0.04177 0"/>
   </joint>
   <joint name="lh_hip_joint" type="revolute">
     <axis xyz="1 0 0"/>
@@ -373,7 +373,7 @@
     <!-- <limit effort="25" lower="-0.68" upper="0.68" velocity="1.5" /> -->
     <parent link="base_link"/>
     <child link="lh_hip_link"/>
-    <origin rpy="0 0 0" xyz="-0.07 0.04177 0"/>
+    <origin rpy="0 0 0" xyz="-0.095 0.04177 0"/>
   </joint>
   <joint name="lh_upper_leg_joint" type="revolute">
     <axis xyz="0 1 0"/>
@@ -504,7 +504,7 @@
   <joint name="rf_debug_joint" type="fixed">
     <parent link="base_link"/>
     <child link="rf_hip_debug_link"/>
-    <origin rpy="0 0 0" xyz="0.074 -0.04177 0"/>
+    <origin rpy="0 0 0" xyz="0.099 -0.04177 0"/>
   </joint>
   <joint name="rf_hip_joint" type="revolute">
     <axis xyz="1 0 0"/>
@@ -512,7 +512,7 @@
     <!-- <limit effort="25" lower="-0.68" upper="0.68" velocity="1.5" /> -->
     <parent link="base_link"/>
     <child link="rf_hip_link"/>
-    <origin rpy="0 0 0" xyz="0.074 -0.04177 0"/>
+    <origin rpy="0 0 0" xyz="0.099 -0.04177 0"/>
   </joint>
   <joint name="rf_upper_leg_joint" type="revolute">
     <axis xyz="0 1 0"/>
@@ -594,13 +594,13 @@
       <inertia ixx="1.98258541667e-05" ixy="0.0" ixz="0.0" iyy="8.90085416667e-06" iyz="0.0" izz="2.13416666667e-05"/>
     </inertial>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/right_upper_leg.dae"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/right_upper_leg.dae"/>
       </geometry>
@@ -617,13 +617,13 @@
       <inertia ixx="5.65146977721e-06" ixy="0.0" ixz="0.0" iyy="8.12310416667e-06" iyz="0.0" izz="3.23253227721e-06"/>
     </inertial>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/lower_leg.dae"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/lower_leg.dae"/>
       </geometry>
@@ -643,7 +643,7 @@
   <joint name="rh_debug_joint" type="fixed">
     <parent link="base_link"/>
     <child link="rh_hip_debug_link"/>
-    <origin rpy="0 0 0" xyz="-0.07 -0.04177 0"/>
+    <origin rpy="0 0 0" xyz="-0.095 -0.04177 0"/>
   </joint>
   <joint name="rh_hip_joint" type="revolute">
     <axis xyz="1 0 0"/>
@@ -651,7 +651,7 @@
     <!-- <limit effort="25" lower="-0.68" upper="0.68" velocity="1.5" /> -->
     <parent link="base_link"/>
     <child link="rh_hip_link"/>
-    <origin rpy="0 0 0" xyz="-0.07 -0.04177 0"/>
+    <origin rpy="0 0 0" xyz="-0.095 -0.04177 0"/>
   </joint>
   <joint name="rh_upper_leg_joint" type="revolute">
     <axis xyz="0 1 0"/>

@@ -6,24 +6,32 @@
             <xacro:property name="base_to_hip_xyz" value="${base_to_hip_x} ${base_to_hip_y} 0" />
             <xacro:property name="hip_to_upper_leg" value="${hip_to_upper_leg_distance}" />
             <xacro:property name="rotate_hip" value="-3.14159" />
+            <xacro:property name="rotate_upper" value="0" />
+            <xacro:property name="rotate_lower" value="0" />
         </xacro:if>
 
         <xacro:if value="${leg == 'lh'}">
             <xacro:property name="base_to_hip_xyz" value="-${base_to_hip_x-0.004} ${base_to_hip_y} 0" />
             <xacro:property name="hip_to_upper_leg" value="${hip_to_upper_leg_distance}" />
             <xacro:property name="rotate_hip" value="-3.14159" />
+            <xacro:property name="rotate_upper" value="-3.14159" />
+            <xacro:property name="rotate_lower" value="-3.14159" />
         </xacro:if>
 
         <xacro:if value="${leg == 'rf'}">
             <xacro:property name="base_to_hip_xyz" value="${base_to_hip_x} -${base_to_hip_y} 0" />
             <xacro:property name="hip_to_upper_leg" value="-${hip_to_upper_leg_distance}" />
             <xacro:property name="rotate_hip" value="0" />
+            <xacro:property name="rotate_upper" value="0" />
+            <xacro:property name="rotate_lower" value="0" />
         </xacro:if>
 
         <xacro:if value="${leg == 'rh'}">
             <xacro:property name="base_to_hip_xyz" value="-${base_to_hip_x-0.004} -${base_to_hip_y} 0" />
             <xacro:property name="hip_to_upper_leg" value="-${hip_to_upper_leg_distance}" />
             <xacro:property name="rotate_hip" value="0" />
+            <xacro:property name="rotate_upper" value="-3.14159" />
+            <xacro:property name="rotate_lower" value="-3.14159" />
         </xacro:if>
 
         <link name="${leg}_hip_debug_link"/>
@@ -62,7 +70,7 @@
                          izz="${(1/12) * upper_leg_mass * (upper_leg_x_length * upper_leg_x_length + upper_leg_y_length * upper_leg_y_length)}" />
             </inertial>
             <collision>
-                <origin xyz="0 0 0" rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 ${rotate_upper}" />
                 <geometry>
                     <xacro:if value="${leg == 'lf'}">
                         <mesh filename="${left_upper_leg_mesh_path}"/>
@@ -79,7 +87,7 @@
                 </geometry>
             </collision>
             <visual>
-                <origin xyz="0 0 0" rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 ${rotate_upper}" />
                 <geometry>
                     <xacro:if value="${leg == 'lf'}">
                         <mesh filename="${left_upper_leg_mesh_path}"/>
@@ -110,13 +118,13 @@
                          izz="${(1/12) * lower_leg_mass * (lower_leg_x_length * lower_leg_x_length + lower_leg_y_length * lower_leg_y_length)}" />
             </inertial>
             <collision>
-                <origin xyz="0 0 0" rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 ${rotate_lower}" />
                 <geometry>
                     <mesh filename="${lower_leg_mesh_path}"/>
                 </geometry>
             </collision>
             <visual>
-                <origin xyz="0 0 0" rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 ${rotate_lower}" />
                 <geometry>
                     <mesh filename="${lower_leg_mesh_path}"/>
                 </geometry>

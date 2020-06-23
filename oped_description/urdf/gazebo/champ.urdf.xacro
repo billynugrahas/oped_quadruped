@@ -8,13 +8,13 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="${base_mesh_path}" />
+                <mesh filename="${base_mesh_path}" scale="1.0 2.05555 1.0"/>
             </geometry>
         </collision>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://oped_description/meshes/gazebo/base.stl" />
+                <mesh filename="${base_mesh_path}" scale="1.0 2.05555 1.0"/> <!--1.0 1.0 1.0-->
             </geometry>
             <material name="black" />
         </visual>

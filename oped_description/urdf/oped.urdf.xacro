@@ -14,7 +14,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://oped_description/meshes/base.dae"/>
+                <mesh filename="${base_mesh_path}"/>
             </geometry>
             <material name="black" />
         </visual>

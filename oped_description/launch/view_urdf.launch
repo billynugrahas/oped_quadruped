@@ -1,5 +1,7 @@
 <launch>
     <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find oped_description)/urdf/oped.urdf.xacro' " />
+    <!-- '$(find oped_description)/urdf/gazebo/champ.urdf.xacro' -->
+
     <node name="oped_robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
         <param name="publish_frequency" type="double" value="30.0" />
         <param name="ignore_timestamp" type="bool" value="true" />

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:property name="base_to_hip_x" value="${0.175 * 0.526474}" />
-    <xacro:property name="base_to_hip_y" value="${0.105 * 0.372414}" />
+    <xacro:property name="base_to_hip_y" value="${0.105 * 0.765517}" />
     <xacro:property name="hip_to_upper_leg_distance" value="${0.06 * 0.507431}" />
     <xacro:property name="upper_leg_to_lower_leg_distance" value="${0.141 * 0.507431}" />
     <xacro:property name="lower_leg_to_foot_distance" value="${0.141 * 0.507431}" />
@@ -9,24 +9,24 @@
     <xacro:property name="hip_mesh_path" value="package://oped_description/meshes/gazebo/hip.stl" />
     <xacro:property name="hip_mass" value="${0.250 * 0.2}" /> <!--ubah-->
     <xacro:property name="hip_x_length" value="${0.112 * 0.526474}" />
-    <xacro:property name="hip_y_length" value="${0.08 * 0.372414}" />
+    <xacro:property name="hip_y_length" value="${0.08 * 0.765517}" />
     <xacro:property name="hip_z_length" value="${0.130 * 0.507431}" />
 
     <xacro:property name="upper_leg_mesh_path" value="package://oped_description/meshes/gazebo/upper_leg.stl" />
     <xacro:property name="upper_leg_mass" value="${0.125 * 0.2}" /> <!--ubah-->
     <xacro:property name="upper_leg_x_length" value="${0.5 * 0.526474}" />
-    <xacro:property name="upper_leg_y_length" value="${0.03 * 0.372414}" />
+    <xacro:property name="upper_leg_y_length" value="${0.03 * 0.765517}" /> <!--0.372414-->
     <xacro:property name="upper_leg_z_length" value="${0.1905 * 0.507431}" />
 
     <xacro:property name="lower_leg_mesh_path" value="package://oped_description/meshes/gazebo/lower_leg.stl" />
     <xacro:property name="lower_leg_mass" value="${0.125 * 0.2}" />
     <xacro:property name="lower_leg_x_length" value="${0.039 * 0.526474}" />
-    <xacro:property name="lower_leg_y_length" value="${0.022 * 0.372414}" />
+    <xacro:property name="lower_leg_y_length" value="${0.022 * 0.765517}" />
     <xacro:property name="lower_leg_z_length" value="${0.156 * 0.507431}" />
 
     <xacro:property name="base_mesh_path" value="package://oped_description/meshes/gazebo/base.stl" />
     <xacro:property name="base_mass" value="${2.0 * 0.2}" />
     <xacro:property name="base_x_length" value="${0.5 * 0.526474}" />
-    <xacro:property name="base_y_length" value="${0.29 * 0.372414}" />
+    <xacro:property name="base_y_length" value="${0.29 * 0.765517}" />
     <xacro:property name="base_z_length" value="${0.130 * 0.507431}" />
 </robot>

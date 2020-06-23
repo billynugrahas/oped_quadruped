@@ -11,13 +11,14 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://oped_description/meshes/gazebo/base.stl"/>
+        <mesh filename="package://oped_description/meshes/gazebo/base.stl" scale="1.0 2.05555 1.0"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://oped_description/meshes/gazebo/base.stl"/>
+        <mesh filename="package://oped_description/meshes/gazebo/base.stl" scale="1.0 2.05555 1.0"/>
+        <!--1.0 1.0 1.0-->
       </geometry>
       <material name="black"/>
     </visual>
@@ -26,7 +27,7 @@
     <inertial>
       <origin xyz="0 0 0"/>
       <mass value="0.4"/>
-      <inertia ixx="0.000533851002465" ixy="0.0" ixz="0.0" iyy="0.0024548411761" iyz="0.0" izz="0.00269859103763"/>
+      <inertia ixx="0.00178784953447" ixy="0.0" ixz="0.0" iyy="0.0024548411761" iyz="0.0" izz="0.00395258956963"/>
     </inertial>
   </link>
   <joint name="base_link_to_base_inertia" type="fixed">
@@ -141,7 +142,7 @@
   <link name="lf_hip_link">
     <inertial>
       <mass value="0.05"/>
-      <inertia ixx="2.18297796387e-05" ixy="0.0" ixz="0.0" iyy="3.26183279867e-05" iyz="0.0" izz="1.81854650091e-05"/>
+      <inertia ixx="3.37584220359e-05" ixy="0.0" ixz="0.0" iyy="3.26183279867e-05" iyz="0.0" izz="3.01141074062e-05"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -164,7 +165,7 @@
     <inertial>
       <origin xyz="0 0 -0.0357738855"/>
       <mass value="0.025"/>
-      <inertia ixx="1.9727213032e-05" ixy="0.0" ixz="0.0" iyy="0.000163829078033" iyz="0.0" izz="0.000144621960703"/>
+      <inertia ixx="2.05659457005e-05" ixy="0.0" ixz="0.0" iyy="0.000163829078033" iyz="0.0" izz="0.000145460693372"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -187,7 +188,7 @@
     <inertial>
       <origin xyz="0 0 -0.031968153"/>
       <mass value="0.025"/>
-      <inertia ixx="1.31943992975e-05" ixy="0.0" ixz="0.0" iyy="1.39328492197e-05" iyz="0.0" izz="1.01814583342e-06"/>
+      <inertia ixx="1.36454510881e-05" ixy="0.0" ixz="0.0" iyy="1.39328492197e-05" iyz="0.0" izz="1.46919762406e-06"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -216,14 +217,14 @@
   <joint name="lf_debug_joint" type="fixed">
     <parent link="base_link"/>
     <child link="lf_hip_debug_link"/>
-    <origin rpy="0 0 0" xyz="0.09213295 0.03910347 0"/>
+    <origin rpy="0 0 0" xyz="0.09213295 0.080379285 0"/>
   </joint>
   <joint name="lf_hip_joint" type="revolute">
     <axis xyz="1 0 0"/>
     <limit effort="25" lower="-3.14159265359" upper="3.14159265359" velocity="1.5"/>
     <parent link="base_link"/>
     <child link="lf_hip_link"/>
-    <origin rpy="0 0 0" xyz="0.09213295 0.03910347 0"/>
+    <origin rpy="0 0 0" xyz="0.09213295 0.080379285 0"/>
   </joint>
   <joint name="lf_upper_leg_joint" type="revolute">
     <axis xyz="0 1 0"/>
@@ -279,7 +280,7 @@
   <link name="lh_hip_link">
     <inertial>
       <mass value="0.05"/>
-      <inertia ixx="2.18297796387e-05" ixy="0.0" ixz="0.0" iyy="3.26183279867e-05" iyz="0.0" izz="1.81854650091e-05"/>
+      <inertia ixx="3.37584220359e-05" ixy="0.0" ixz="0.0" iyy="3.26183279867e-05" iyz="0.0" izz="3.01141074062e-05"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -302,7 +303,7 @@
     <inertial>
       <origin xyz="0 0 -0.0357738855"/>
       <mass value="0.025"/>
-      <inertia ixx="1.9727213032e-05" ixy="0.0" ixz="0.0" iyy="0.000163829078033" iyz="0.0" izz="0.000144621960703"/>
+      <inertia ixx="2.05659457005e-05" ixy="0.0" ixz="0.0" iyy="0.000163829078033" iyz="0.0" izz="0.000145460693372"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -325,16 +326,16 @@
     <inertial>
       <origin xyz="0 0 -0.031968153"/>
       <mass value="0.025"/>
-      <inertia ixx="1.31943992975e-05" ixy="0.0" ixz="0.0" iyy="1.39328492197e-05" iyz="0.0" izz="1.01814583342e-06"/>
+      <inertia ixx="1.36454510881e-05" ixy="0.0" ixz="0.0" iyy="1.39328492197e-05" iyz="0.0" izz="1.46919762406e-06"/>
     </inertial>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/gazebo/lower_leg.stl"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/gazebo/lower_leg.stl"/>
       </geometry>
@@ -354,14 +355,14 @@
   <joint name="lh_debug_joint" type="fixed">
     <parent link="base_link"/>
     <child link="lh_hip_debug_link"/>
-    <origin rpy="0 0 0" xyz="-0.09213295 0.03910347 0"/>
+    <origin rpy="0 0 0" xyz="-0.09213295 0.080379285 0"/>
   </joint>
   <joint name="lh_hip_joint" type="revolute">
     <axis xyz="1 0 0"/>
     <limit effort="25" lower="-3.14159265359" upper="3.14159265359" velocity="1.5"/>
     <parent link="base_link"/>
     <child link="lh_hip_link"/>
-    <origin rpy="0 0 0" xyz="-0.09213295 0.03910347 0"/>
+    <origin rpy="0 0 0" xyz="-0.09213295 0.080379285 0"/>
   </joint>
   <joint name="lh_upper_leg_joint" type="revolute">
     <axis xyz="0 1 0"/>
@@ -417,7 +418,7 @@
   <link name="rf_hip_link">
     <inertial>
       <mass value="0.05"/>
-      <inertia ixx="2.18297796387e-05" ixy="0.0" ixz="0.0" iyy="3.26183279867e-05" iyz="0.0" izz="1.81854650091e-05"/>
+      <inertia ixx="3.37584220359e-05" ixy="0.0" ixz="0.0" iyy="3.26183279867e-05" iyz="0.0" izz="3.01141074062e-05"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -440,7 +441,7 @@
     <inertial>
       <origin xyz="0 0 -0.0357738855"/>
       <mass value="0.025"/>
-      <inertia ixx="1.9727213032e-05" ixy="0.0" ixz="0.0" iyy="0.000163829078033" iyz="0.0" izz="0.000144621960703"/>
+      <inertia ixx="2.05659457005e-05" ixy="0.0" ixz="0.0" iyy="0.000163829078033" iyz="0.0" izz="0.000145460693372"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -463,7 +464,7 @@
     <inertial>
       <origin xyz="0 0 -0.031968153"/>
       <mass value="0.025"/>
-      <inertia ixx="1.31943992975e-05" ixy="0.0" ixz="0.0" iyy="1.39328492197e-05" iyz="0.0" izz="1.01814583342e-06"/>
+      <inertia ixx="1.36454510881e-05" ixy="0.0" ixz="0.0" iyy="1.39328492197e-05" iyz="0.0" izz="1.46919762406e-06"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -492,14 +493,14 @@
   <joint name="rf_debug_joint" type="fixed">
     <parent link="base_link"/>
     <child link="rf_hip_debug_link"/>
-    <origin rpy="0 0 0" xyz="0.09213295 -0.03910347 0"/>
+    <origin rpy="0 0 0" xyz="0.09213295 -0.080379285 0"/>
   </joint>
   <joint name="rf_hip_joint" type="revolute">
     <axis xyz="1 0 0"/>
     <limit effort="25" lower="-3.14159265359" upper="3.14159265359" velocity="1.5"/>
     <parent link="base_link"/>
     <child link="rf_hip_link"/>
-    <origin rpy="0 0 0" xyz="0.09213295 -0.03910347 0"/>
+    <origin rpy="0 0 0" xyz="0.09213295 -0.080379285 0"/>
   </joint>
   <joint name="rf_upper_leg_joint" type="revolute">
     <axis xyz="0 1 0"/>
@@ -555,7 +556,7 @@
   <link name="rh_hip_link">
     <inertial>
       <mass value="0.05"/>
-      <inertia ixx="2.18297796387e-05" ixy="0.0" ixz="0.0" iyy="3.26183279867e-05" iyz="0.0" izz="1.81854650091e-05"/>
+      <inertia ixx="3.37584220359e-05" ixy="0.0" ixz="0.0" iyy="3.26183279867e-05" iyz="0.0" izz="3.01141074062e-05"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -578,7 +579,7 @@
     <inertial>
       <origin xyz="0 0 -0.0357738855"/>
       <mass value="0.025"/>
-      <inertia ixx="1.9727213032e-05" ixy="0.0" ixz="0.0" iyy="0.000163829078033" iyz="0.0" izz="0.000144621960703"/>
+      <inertia ixx="2.05659457005e-05" ixy="0.0" ixz="0.0" iyy="0.000163829078033" iyz="0.0" izz="0.000145460693372"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -601,16 +602,16 @@
     <inertial>
       <origin xyz="0 0 -0.031968153"/>
       <mass value="0.025"/>
-      <inertia ixx="1.31943992975e-05" ixy="0.0" ixz="0.0" iyy="1.39328492197e-05" iyz="0.0" izz="1.01814583342e-06"/>
+      <inertia ixx="1.36454510881e-05" ixy="0.0" ixz="0.0" iyy="1.39328492197e-05" iyz="0.0" izz="1.46919762406e-06"/>
     </inertial>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/gazebo/lower_leg.stl"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -3.14159" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://oped_description/meshes/gazebo/lower_leg.stl"/>
       </geometry>
@@ -630,14 +631,14 @@
   <joint name="rh_debug_joint" type="fixed">
     <parent link="base_link"/>
     <child link="rh_hip_debug_link"/>
-    <origin rpy="0 0 0" xyz="-0.09213295 -0.03910347 0"/>
+    <origin rpy="0 0 0" xyz="-0.09213295 -0.080379285 0"/>
   </joint>
   <joint name="rh_hip_joint" type="revolute">
     <axis xyz="1 0 0"/>
     <limit effort="25" lower="-3.14159265359" upper="3.14159265359" velocity="1.5"/>
     <parent link="base_link"/>
     <child link="rh_hip_link"/>
-    <origin rpy="0 0 0" xyz="-0.09213295 -0.03910347 0"/>
+    <origin rpy="0 0 0" xyz="-0.09213295 -0.080379285 0"/>
   </joint>
   <joint name="rh_upper_leg_joint" type="revolute">
     <axis xyz="0 1 0"/>
