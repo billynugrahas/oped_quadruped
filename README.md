@@ -39,17 +39,19 @@ TESTED ON:
     sudo apt install -y python-rosdep
     sudo apt install -y ros-melodic-dynamixel-sdk
     cd <your_ws>/src
-    git clone https://github.com/YDLIDAR/ydlidar_ros
     git clone https://github.com/billynugrahas/oped_quadruped
     cd ..
     rosdep install --from-paths src --ignore-src -r -y
     
     
 
-1.2. [On RaspberryPi] Install i2c dev and imu_tools
+1.2. [On RaspberryPi] Install i2c dev, imu_tools, and lidar
 
     sudo apt-get install i2c-tools python-smbus
     sudo apt-get install ros-melodic-imu-tools
+    cd <your_ws>/src
+    git clone https://github.com/Slamtec/rplidar_ros.git
+    git clone https://github.com/YDLIDAR/ydlidar_ros
     
 1.3. Create udev rules (for hardware)
 
