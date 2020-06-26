@@ -359,11 +359,11 @@ namespace champ
                                if (joint_number == 0 && (leg_number == 1 || leg_number == 2))
                                {
                                  dxl_goal_position = 512 + leg_joint_offsett[leg_number][joint_number] - ((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE);
-                                //  fprintf(stderr, "leg_number : %d joint : %d leg_joint = %0.2f dxl_goal = %d \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]*RAD_TO_DEG*DEG_TO_PULSE, dxl_goal_position);
+                                //  fprintf(stderr, "leg_number : %d jtrueoint : %d leg_joint = %0.2f dxl_goal = %d \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]*RAD_TO_DEG*DEG_TO_PULSE, dxl_goal_position);
                                }
                                else
                                dxl_goal_position = 512 + leg_joint_offsett[leg_number][joint_number] + ((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE); //normal
-                               if (leg_number == 2 && joint_number == 0) fprintf(stderr, "leg_number : %d joint : %d leg_joint = %0.2f dxl_goal = %d \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]*RAD_TO_DEG*DEG_TO_PULSE, dxl_goal_position);
+                              //  if (leg_number == 2 && joint_number == 1) fprintf(stderr, "leg_number : %d joint : %d leg_joint = %0.2f dxl_goal = %d \n", leg_number, joint_number, leg_joint_position[leg_number][joint_number]*RAD_TO_DEG*DEG_TO_PULSE, dxl_goal_position);
                               
                               
                               // fprintf(stderr, "leg_number : %d joint : %d dxl_goal_position = %04d \n", leg_number, joint_number, dxl_goal_position);
