@@ -37,5 +37,5 @@ odom0_relative: false
 # imu0_relative: true
 
 odom_frame: odom
-base_link_frame: base_link #base_footprint
+base_link_frame: base_footprint #base_footprint
 world_frame: odom
