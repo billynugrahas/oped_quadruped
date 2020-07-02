@@ -11,10 +11,12 @@
         </include>
 
         <!-- Calls navigation stack packages -->
-        <include file="$(find oped_config)/launch/include/move_base.launch">
+        <!-- <include file="$(find oped_config)/launch/include/move_base.launch">
             <arg name="frame_prefix" value="$(arg frame_prefix)"/>
             <arg name="robot_name"   value="$(arg robot_name)"/>
-        </include>
+        </include> -->
+
+        <include file="$(find oped_config)/launch/tb3_move_base.launch"/>
         <!-- <include file="$(find oped_config)/launch/tb3_move_base.launch"/> -->
 
         <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz"

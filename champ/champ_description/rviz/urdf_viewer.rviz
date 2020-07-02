@@ -73,32 +73,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        camera_depth_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_rgb_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_rgb_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        hokuyo_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         imu_link:
           Alpha: 1
           Show Axes: false
@@ -145,6 +119,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         lh_upper_leg_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lidar_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -213,21 +192,11 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        base_footprint:
+          Value: true
         base_inertia:
           Value: true
         base_link:
-          Value: true
-        camera_depth_frame:
-          Value: true
-        camera_depth_optical_frame:
-          Value: true
-        camera_link:
-          Value: true
-        camera_rgb_frame:
-          Value: true
-        camera_rgb_optical_frame:
-          Value: true
-        hokuyo_frame:
           Value: true
         imu_link:
           Value: true
@@ -251,6 +220,10 @@ Visualization Manager:
           Value: true
         lh_upper_leg_link:
           Value: true
+        lidar_frame:
+          Value: true
+        odom:
+          Value: true
         rf_foot_link:
           Value: true
         rf_hip_debug_link:
@@ -273,52 +246,47 @@ Visualization Manager:
           Value: true
       Marker Scale: 0.25
       Name: TF
-      Show Arrows: false
+      Show Arrows: true
       Show Axes: true
       Show Names: false
       Tree:
-        base_link:
-          base_inertia:
-            {}
-          camera_link:
-            camera_depth_frame:
-              camera_depth_optical_frame:
+        odom:
+          base_footprint:
+            base_link:
+              base_inertia:
                 {}
-            camera_rgb_frame:
-              camera_rgb_optical_frame:
+              imu_link:
                 {}
-          hokuyo_frame:
-            {}
-          imu_link:
-            {}
-          lf_hip_debug_link:
-            {}
-          lf_hip_link:
-            lf_upper_leg_link:
-              lf_lower_leg_link:
-                lf_foot_link:
-                  {}
-          lh_hip_debug_link:
-            {}
-          lh_hip_link:
-            lh_upper_leg_link:
-              lh_lower_leg_link:
-                lh_foot_link:
-                  {}
-          rf_hip_debug_link:
-            {}
-          rf_hip_link:
-            rf_upper_leg_link:
-              rf_lower_leg_link:
-                rf_foot_link:
-                  {}
-          rh_hip_debug_link:
-            {}
-          rh_hip_link:
-            rh_upper_leg_link:
-              rh_lower_leg_link:
-                rh_foot_link:
-                  {}
+              lf_hip_debug_link:
+                {}
+              lf_hip_link:
+                lf_upper_leg_link:
+                  lf_lower_leg_link:
+                    lf_foot_link:
+                      {}
+              lh_hip_debug_link:
+                {}
+              lh_hip_link:
+                lh_upper_leg_link:
+                  lh_lower_leg_link:
+                    lh_foot_link:
+                      {}
+              lidar_frame:
+                {}
+              rf_hip_debug_link:
+                {}
+              rf_hip_link:
+                rf_upper_leg_link:
+                  rf_lower_leg_link:
+                    rf_foot_link:
+                      {}
+              rh_hip_debug_link:
+                {}
+              rh_hip_link:
+                rh_upper_leg_link:
+                  rh_lower_leg_link:
+                    rh_foot_link:
+                      {}
       Update Interval: 0
       Value: true
     - Class: rviz/MarkerArray
@@ -348,7 +316,7 @@ Visualization Manager:
   Global Options:
     Background Color: 238; 238; 236
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: /odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -372,25 +340,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.2544639110565186
+      Distance: 1.265994906425476
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.004289729055017233
-        Y: -0.043374788016080856
-        Z: -0.05675836279988289
+        X: 0.017610229551792145
+        Y: 0.1004091203212738
+        Z: 0.05808818340301514
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.2247973382472992
+      Pitch: 0.30979737639427185
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.4653564989566803
+      Yaw: 1.130355954170227
     Saved: ~
 Window Geometry:
   Displays:
@@ -398,7 +366,7 @@ Window Geometry:
   Height: 1050
   Hide Left Dock: false
   Hide Right Dock: true
-  QMainWindow State: 000000ff00000000fd00000004000000000000018f0000037bfc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000037b000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000003eefc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730000000028000003ee000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000003ab0000003ffc0100000002fb0000000800540069006d00650100000000000003ab000002eb00fffffffb0000000800540069006d00650100000000000004500000000000000000000002160000037b00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001640000037bfc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000037b000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000003eefc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730000000028000003ee000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000003ab0000003ffc0100000002fb0000000800540069006d00650100000000000003ab000002eb00fffffffb0000000800540069006d00650100000000000004500000000000000000000002410000037b00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:

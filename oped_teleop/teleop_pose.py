@@ -72,6 +72,9 @@ CTRL-C to quit
                 'r':(0,0,1,0),
                 'y':(0,0,-1,0),
                 'g':(0,0,0,0),
+                'a':(0,0,0,0),
+                's':(0,0,0,0),
+                'd':(0,0,0,0),
             }
 
         self.speedBindings={
@@ -167,6 +170,48 @@ CTRL-C to quit
                         body_pose.pitch = pitch
                         body_pose.yaw = yaw
                         print ("g key ! - publish:\troll %f\tpitch %f\tyaw %f " % (roll,pitch,yaw))
+                        self.pose_publisher.publish(body_pose)
+
+                    elif key == 'a':
+                        body_pose = Pose()
+                        body_pose.x = 0
+                        body_pose.y = 0
+                        body_pose.z = 1.2
+                        roll = 0
+                        pitch = 0
+                        yaw = 0
+                        body_pose.roll = roll
+                        body_pose.pitch = pitch
+                        body_pose.yaw = yaw
+                        print ("a key ! - publish:\troll %f\tpitch %f\tyaw %f " % (roll,pitch,yaw))
+                        self.pose_publisher.publish(body_pose)
+
+                    elif key == 's':
+                        body_pose = Pose()
+                        body_pose.x = 0
+                        body_pose.y = 0
+                        body_pose.z = 1
+                        roll = 0
+                        pitch = 0
+                        yaw = 0
+                        body_pose.roll = roll
+                        body_pose.pitch = pitch
+                        body_pose.yaw = yaw
+                        print ("s key ! - publish:\troll %f\tpitch %f\tyaw %f " % (roll,pitch,yaw))
+                        self.pose_publisher.publish(body_pose)
+
+                    elif key == 'd':
+                        body_pose = Pose()
+                        body_pose.x = 0
+                        body_pose.y = 0
+                        body_pose.z = 0.8
+                        roll = 0
+                        pitch = 0
+                        yaw = 0
+                        body_pose.roll = roll
+                        body_pose.pitch = pitch
+                        body_pose.yaw = yaw
+                        print ("d key ! - publish:\troll %f\tpitch %f\tyaw %f " % (roll,pitch,yaw))
                         self.pose_publisher.publish(body_pose)
                         
                     elif cmd_attempts > 1:

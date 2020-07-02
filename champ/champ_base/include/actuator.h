@@ -355,7 +355,8 @@ namespace champ
                               //  }
                               //  else 
                               //  dxl_goal_position = leg_joint_offsett[leg_number][joint_number] + ((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE); //normal
-                             
+                            //  fprintf(stderr, "leg: %d joint: %d ID: %02d pos: %d \n", leg_number, joint_number, dxl_quadruped_servo_address[leg_number][joint_number], dxl_goal_position);
+                              
                                if (joint_number == 0 && (leg_number == 1 || leg_number == 2))
                                {
                                  dxl_goal_position = 512 + leg_joint_offsett[leg_number][joint_number] - ((leg_joint_position[leg_number][joint_number]*RAD_TO_DEG) * DEG_TO_PULSE);

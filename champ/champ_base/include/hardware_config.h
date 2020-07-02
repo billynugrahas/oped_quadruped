@@ -87,7 +87,7 @@
     #define TORQUE_ENABLE                   1                   // Value for enabling the torque
     #define TORQUE_DISABLE                  0                   // Value for disabling the torque
     
-    #define DXL_MOVING_SPEED                300 // X ORIENTATION
+    #define DXL_MOVING_SPEED                600 // X ORIENTATION
     // #define DXL_MOVING_SPEED                500 // ORI
 
     #define DEG_TO_PULSE                    3.41 //3.413333333
