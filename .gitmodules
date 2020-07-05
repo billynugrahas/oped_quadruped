@@ -1,0 +1,3 @@
+[submodule "champ/champ_base/include/libchamp"]
+	path = champ/champ_base/include/libchamp
+	url = https://github.com/billynugrahas/oped_quadruped.git
