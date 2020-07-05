@@ -18,7 +18,7 @@ com_x_translation: 0.0
 swing_height : 0.01 #0.10
 stance_depth : 0.002
 stance_duration : 0.4
-nominal_height : 0.145
+nominal_height : 0.16
 
 
 # 0.145 nominal height swing 0.1 and stance depth 0.003 bagus buat mundur
