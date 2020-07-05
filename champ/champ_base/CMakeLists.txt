@@ -43,16 +43,16 @@ install(DIRECTORY include/libchamp/
 
 #Download libchamp
 set(LIBCHAMP_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/libchamp/include")
-set(HEADER_URL "https://github.com/chvmp/libchamp")
-
-if (NOT EXISTS "${LIBCHAMP_HEADERS}")
-  message(STATUS "Downloading libchamp...")
-  message(STATUS ${CMAKE_CURRENT_SOURCE_DIR}/include)
-  execute_process(
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include
-    COMMAND git clone ${HEADER_URL}
-  )
-endif()
+#set(HEADER_URL "https://github.com/chvmp/libchamp")
+#
+#if (NOT EXISTS "${LIBCHAMP_HEADERS}")
+#  message(STATUS "Downloading libchamp...")
+#  message(STATUS ${CMAKE_CURRENT_SOURCE_DIR}/include)
+#  execute_process(
+#    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include
+#    COMMAND git clone ${HEADER_URL}
+#  )
+#endif()
 ##end of libchamp download
 
 #Download velocity smoother
