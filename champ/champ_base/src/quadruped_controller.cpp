@@ -49,6 +49,7 @@ QuadrupedController::QuadrupedController(const ros::NodeHandle &node_handle,
     nh_.getParam("gait/max_linear_velocity_x",  gait_config_.max_linear_velocity_x);
     nh_.getParam("gait/max_linear_velocity_y",  gait_config_.max_linear_velocity_y);
     nh_.getParam("gait/max_angular_velocity_z", gait_config_.max_angular_velocity_z);
+    nh_.getParam("gait/com_x_translation",      gait_config_.com_x_translation);
     nh_.getParam("gait/swing_height",           gait_config_.swing_height);
     nh_.getParam("gait/stance_depth",           gait_config_.stance_depth);
     nh_.getParam("gait/stance_duration",        gait_config_.stance_duration);
