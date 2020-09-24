@@ -11,21 +11,27 @@
         <!-- <arg name="map_file" default="$(find oped_navigation)/maps/map_default.yaml"/> -->
         <!-- <arg name="map_file" default="$(find oped_navigation)/maps/map_default_scale_2.yaml"/> -->
         <!-- <arg name="map_file" default="$(find oped_navigation)/maps/map_default_scale_1_3.yaml"/> -->
-        <!-- <arg name="map_file" default="$(find oped_navigation)/maps/konfigurasi_1.yaml"/> -->
-        <arg name="map_file" default="$(find oped_navigation)/maps/kos_kembar_simulasi.yaml"/>
-        <!-- <arg name="map_file" default="$(find oped_navigation)/maps/labirin_kos_2.yaml"/> -->
+        <arg name="map_file" default="$(find oped_navigation)/maps/konfigurasi_1.yaml"/>
         <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" >
             <param name="frame_id" value="$(arg frame_prefix)map" />
         </node>
         <!-- AMCL used for localization -->
         <!-- <include file="$(find oped_config)/launch/include/amcl.launch"/> -->
-        <include file="$(find oped_config)/launch/tb3_amcl.launch"/>
+        <!-- <include file="$(find oped_config)/launch/tb3_amcl.launch"/> -->
         <!-- Calls navigation stack -->
         <!-- <include file="$(find oped_config)/launch/include/move_base.launch"/> -->
-        <include file="$(find oped_config)/launch/tb3_move_base.launch"/>
+        <!-- <include file="$(find oped_config)/launch/tb3_move_base.launch"/> -->
+
+        <!-- AMCL used for localization -->
+        <include file="$(find oped_config)/launch/include/linorobot_amcl.launch" />
+
+        <!-- Calls navigation stack packages for compatible Linorobot base -->
+        <!-- Takes reference from env variable LINOBASE. ie. export LINOBASE=2wd -->
+        <include file="$(find oped_config)/launch/include/move_base_mecanum.launch" />
         
         <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz"
             args="-d $(find oped_navigation)/rviz/turtlebot3_navigation.rviz -f $(arg frame_prefix)map"
             output="screen"/>
     </group>
 </launch>
+ 

@@ -2,13 +2,13 @@ local_costmap:
   global_frame: odom
   robot_base_frame: base_footprint
 
-  update_frequency: 10.0
-  publish_frequency: 10.0
+  update_frequency: 6.0 #10.0
+  publish_frequency: 6.0 #10.0
   transform_tolerance: 0.5  
 
   static_map: false  
   rolling_window: true
-  width: 1.5 #Global, kalau local 1.5 cukup
-  height: 1  #Global, kalau local 1.5 cukup
+  width: 4.0 #Global, kalau local 1.5 cukup
+  height: 4.0  #Global, kalau local 1.5 cukup
   resolution: 0.05
   

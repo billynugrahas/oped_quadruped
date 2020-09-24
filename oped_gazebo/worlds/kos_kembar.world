@@ -1,0 +1,1348 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='map_default'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='map_default'>
+        <inertial>
+          <mass>50</mass>
+          <inertia>
+            <ixx>26.0017</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>51.2533</iyy>
+            <iyz>0</iyz>
+            <izz>26.0017</izz>
+          </inertia>
+        </inertial>
+        <visual name='map_default_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://oped_gazebo/worlds/Lapangan2.STL</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='map_default_coliision'>
+          <geometry>
+            <mesh>
+              <uri>model://oped_gazebo/worlds/Lapangan2.STL</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='default'>
+      <sim_time>305 663000000</sim_time>
+      <real_time>85 730232658</real_time>
+      <wall_time>1597933992 96746589</wall_time>
+      <iterations>70805</iterations>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='map_default'>
+        <pose frame=''>-2.00094 -2.10572 0 0 0 -0.001128</pose>
+        <scale>1 1 1</scale>
+        <link name='map_default'>
+          <pose frame=''>-2.00094 -2.10572 0 0 0 -0.001128</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='oped'>
+        <pose frame=''>0.013438 -0.001475 0.100253 0.00032 -0.000282 -0.020866</pose>
+        <scale>1 1 1</scale>
+        <link name='base_link'>
+          <pose frame=''>0.013438 -0.001475 0.100253 0.00032 -0.000282 -0.020866</pose>
+          <velocity>2.1e-05 7e-06 -3.7e-05 -0.000362 -3.4e-05 -0.000147</velocity>
+          <acceleration>0.010521 -0.002282 0.024874 0.093012 -0.103346 0.054133</acceleration>
+          <wrench>0.004229 -0.000918 0.009999 0 -0 0</wrench>
+        </link>
+        <link name='lf_hip_link'>
+          <pose frame=''>0.107228 0.076964 0.100305 0.000791 -0.000282 -0.020863</pose>
+          <velocity>3.4e-05 -7e-06 -6.1e-05 5.5e-05 -4.3e-05 -0.000208</velocity>
+          <acceleration>0.006655 0.003299 0.041403 -0.598982 0.067743 0.012493</acceleration>
+          <wrench>0.000333 0.000165 0.00207 0 -0 0</wrench>
+        </link>
+        <link name='lf_lower_leg_link'>
+          <pose frame=''>0.056644 0.108511 0.050385 0.001085 -0.799171 -0.021625</pose>
+          <velocity>-6e-06 6e-06 0 -9e-05 -0.000111 -3.1e-05</velocity>
+          <acceleration>0.011141 -0.000136 0.009351 -1.49937 0.462458 -0.583478</acceleration>
+          <wrench>0.000279 -3e-06 0.000234 0 -0 0</wrench>
+        </link>
+        <link name='lf_upper_leg_link'>
+          <pose frame=''>0.107863 0.107403 0.100329 0.001132 0.798122 -0.020052</pose>
+          <velocity>4.1e-05 -8e-06 -5.7e-05 7.3e-05 0.001015 -0.000188</velocity>
+          <acceleration>0.01271 0.002672 0.02845 1.34635 0.282189 2.55429</acceleration>
+          <wrench>0.000318 6.7e-05 0.000711 0 -0 0</wrench>
+        </link>
+        <link name='lh_hip_link'>
+          <pose frame=''>-0.076998 0.080808 0.100253 -0.000134 -0.000282 -0.020872</pose>
+          <velocity>3e-05 1.9e-05 -6.8e-05 -0.00019 -3.7e-05 -1.9e-05</velocity>
+          <acceleration>-0.006452 -0.010325 0.033791 1.23246 -0.263918 0.617174</acceleration>
+          <wrench>-0.000323 -0.000516 0.00169 0 -0 0</wrench>
+        </link>
+        <link name='lh_lower_leg_link'>
+          <pose frame=''>-0.025047 0.110169 0.050402 -0.000324 0.798785 -0.021135</pose>
+          <velocity>4.4e-05 2e-06 -2.8e-05 -9.5e-05 0.000873 -6.4e-05</velocity>
+          <acceleration>-0.046783 -0.000544 0.113436 -2.10005 -1.49863 1.65743</acceleration>
+          <wrench>-0.00117 -1.4e-05 0.002836 0 -0 0</wrench>
+        </link>
+        <link name='lh_upper_leg_link'>
+          <pose frame=''>-0.076362 0.111248 0.100249 -0.000195 -0.800014 -0.020735</pose>
+          <velocity>2.7e-05 1.6e-05 -6.8e-05 -0.000187 -0.000543 -5e-05</velocity>
+          <acceleration>-0.041409 -0.007862 0.084141 -1.9763 -1.27045 -2.56891</acceleration>
+          <wrench>-0.001035 -0.000197 0.002104 0 -0 0</wrench>
+        </link>
+        <link name='rf_hip_link'>
+          <pose frame=''>0.103874 -0.083759 0.100254 -0.000197 -0.000282 -0.020871</pose>
+          <velocity>1.1e-05 -6e-06 -2e-06 -0.000145 -4.2e-05 -5.8e-05</velocity>
+          <acceleration>0.014277 0.001936 0.028991 -1.29488 -0.29518 -0.037415</acceleration>
+          <wrench>0.000714 9.7e-05 0.00145 0 -0 0</wrench>
+        </link>
+        <link name='rf_lower_leg_link'>
+          <pose frame=''>0.051932 -0.113137 0.050404 -0.000177 -0.798743 -0.020768</pose>
+          <velocity>1.7e-05 -1e-06 2.4e-05 0.000178 0.000334 -0.00018</velocity>
+          <acceleration>0.013481 -0.003629 0.008341 -2.92559 0.199953 -1.06027</acceleration>
+          <wrench>0.000337 -9.1e-05 0.000209 0 -0 0</wrench>
+        </link>
+        <link name='rf_upper_leg_link'>
+          <pose frame=''>0.103239 -0.114198 0.10026 -0.000282 0.79985 -0.021075</pose>
+          <velocity>1.4e-05 -2e-06 9e-06 -0.000144 9.7e-05 -9.5e-05</velocity>
+          <acceleration>0.020814 -0.001197 0.028504 1.93711 0.718194 2.94281</acceleration>
+          <wrench>0.00052 -3e-05 0.000713 0 -0 0</wrench>
+        </link>
+        <link name='rh_hip_link'>
+          <pose frame=''>-0.080352 -0.079914 0.100201 0.000824 -0.000282 -0.020867</pose>
+          <velocity>9e-06 2.1e-05 -1.2e-05 -0.000209 -3.7e-05 -0.000145</velocity>
+          <acceleration>0.015075 -0.006029 0.006615 0.692544 0.057465 -0.029005</acceleration>
+          <wrench>0.000754 -0.000301 0.000331 0 -0 0</wrench>
+        </link>
+        <link name='rh_lower_leg_link'>
+          <pose frame=''>-0.029715 -0.111382 0.050284 0.001258 0.797946 -0.019936</pose>
+          <velocity>2e-06 2e-06 -6e-06 -9.1e-05 4.3e-05 -6.5e-05</velocity>
+          <acceleration>0.004289 -5e-06 -0.002735 -0.623716 0.542224 -1.44023</acceleration>
+          <wrench>0.000107 -0 -6.8e-05 0 -0 0</wrench>
+        </link>
+        <link name='rh_upper_leg_link'>
+          <pose frame=''>-0.080987 -0.110354 0.100176 0.001175 -0.799125 -0.021706</pose>
+          <velocity>4e-06 2.1e-05 -6e-06 -0.000206 2.2e-05 -0.00017</velocity>
+          <acceleration>0.012214 -0.002145 -0.001 0.674704 -0.484703 -1.86563</acceleration>
+          <wrench>0.000305 -5.4e-05 -2.5e-05 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>-0.258685 0.225243 5.96329 0 1.5698 0.00084</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='oped'>
+      <link name='base_link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.000192 0 -0 0</pose>
+          <mass>0.402</mass>
+          <inertia>
+            <ixx>0.00179476</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00246176</iyy>
+            <iyz>0</iyz>
+            <izz>0.00395359</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 2.05555 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/base.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__lidar_frame_collision_1'>
+          <pose frame=''>-0.007 0 0.077 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.0315</length>
+              <radius>0.035</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 2.05555 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/base.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__lidar_frame_visual_1'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/ydlidar_x4.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay/>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <sensor name='lds_lfcd_sensor' type='ray'>
+          <visualize>0</visualize>
+          <update_rate>5</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>360</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>6.28319</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.12</min>
+              <max>10</max>
+              <resolution>0.5</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name='gazebo_ros_lds_lfcd_controller' filename='libgazebo_ros_laser.so'>
+            <topicName>scan</topicName>
+            <frameName>lidar_frame</frameName>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose frame=''>0 0 0.077 0 -0 0</pose>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='lf_hip_link'>
+        <pose frame=''>0.092133 0.080379 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>0.05</mass>
+          <inertia>
+            <ixx>3.37584e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>3.26183e-05</iyy>
+            <iyz>0</iyz>
+            <izz>3.01141e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='lf_hip_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/hip.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='lf_hip_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/hip.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='lf_hip_joint' type='revolute'>
+        <child>lf_hip_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='lf_upper_leg_link'>
+        <pose frame=''>0.092133 0.110825 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 -0.035774 0 -0 0</pose>
+          <mass>0.025</mass>
+          <inertia>
+            <ixx>2.05659e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000163829</iyy>
+            <iyz>0</iyz>
+            <izz>0.000145461</izz>
+          </inertia>
+        </inertial>
+        <collision name='lf_upper_leg_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/upper_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='lf_upper_leg_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/upper_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='lf_upper_leg_joint' type='revolute'>
+        <child>lf_upper_leg_link</child>
+        <parent>lf_hip_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='lf_lower_leg_link'>
+        <pose frame=''>0.092133 0.110825 -0.071548 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 -0.031968 0 -0 0</pose>
+          <mass>0.025</mass>
+          <inertia>
+            <ixx>1.36455e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.39328e-05</iyy>
+            <iyz>0</iyz>
+            <izz>1.4692e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='lf_lower_leg_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/lower_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <max_vel>0</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='lf_lower_leg_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/lower_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='lf_lower_leg_joint' type='revolute'>
+        <child>lf_lower_leg_link</child>
+        <parent>lf_upper_leg_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='lh_hip_link'>
+        <pose frame=''>-0.092133 0.080379 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>0.05</mass>
+          <inertia>
+            <ixx>3.37584e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>3.26183e-05</iyy>
+            <iyz>0</iyz>
+            <izz>3.01141e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='lh_hip_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/hip.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='lh_hip_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/hip.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='lh_hip_joint' type='revolute'>
+        <child>lh_hip_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='lh_upper_leg_link'>
+        <pose frame=''>-0.092133 0.110825 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 -0.035774 0 -0 0</pose>
+          <mass>0.025</mass>
+          <inertia>
+            <ixx>2.05659e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000163829</iyy>
+            <iyz>0</iyz>
+            <izz>0.000145461</izz>
+          </inertia>
+        </inertial>
+        <collision name='lh_upper_leg_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/upper_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='lh_upper_leg_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/upper_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='lh_upper_leg_joint' type='revolute'>
+        <child>lh_upper_leg_link</child>
+        <parent>lh_hip_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='lh_lower_leg_link'>
+        <pose frame=''>-0.092133 0.110825 -0.071548 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 -0.031968 0 -0 0</pose>
+          <mass>0.025</mass>
+          <inertia>
+            <ixx>1.36455e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.39328e-05</iyy>
+            <iyz>0</iyz>
+            <izz>1.4692e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='lh_lower_leg_link_collision'>
+          <pose frame=''>0 0 0 0 0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/lower_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <max_vel>0</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='lh_lower_leg_link_visual'>
+          <pose frame=''>0 0 0 0 0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/lower_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='lh_lower_leg_joint' type='revolute'>
+        <child>lh_lower_leg_link</child>
+        <parent>lh_upper_leg_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='rf_hip_link'>
+        <pose frame=''>0.092133 -0.080379 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>0.05</mass>
+          <inertia>
+            <ixx>3.37584e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>3.26183e-05</iyy>
+            <iyz>0</iyz>
+            <izz>3.01141e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='rf_hip_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/hip.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rf_hip_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/hip.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rf_hip_joint' type='revolute'>
+        <child>rf_hip_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='rf_upper_leg_link'>
+        <pose frame=''>0.092133 -0.110825 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 -0.035774 0 -0 0</pose>
+          <mass>0.025</mass>
+          <inertia>
+            <ixx>2.05659e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000163829</iyy>
+            <iyz>0</iyz>
+            <izz>0.000145461</izz>
+          </inertia>
+        </inertial>
+        <collision name='rf_upper_leg_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/upper_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rf_upper_leg_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/upper_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rf_upper_leg_joint' type='revolute'>
+        <child>rf_upper_leg_link</child>
+        <parent>rf_hip_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='rf_lower_leg_link'>
+        <pose frame=''>0.092133 -0.110825 -0.071548 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 -0.031968 0 -0 0</pose>
+          <mass>0.025</mass>
+          <inertia>
+            <ixx>1.36455e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.39328e-05</iyy>
+            <iyz>0</iyz>
+            <izz>1.4692e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='rf_lower_leg_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/lower_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <max_vel>0</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rf_lower_leg_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/lower_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rf_lower_leg_joint' type='revolute'>
+        <child>rf_lower_leg_link</child>
+        <parent>rf_upper_leg_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='rh_hip_link'>
+        <pose frame=''>-0.092133 -0.080379 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>0.05</mass>
+          <inertia>
+            <ixx>3.37584e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>3.26183e-05</iyy>
+            <iyz>0</iyz>
+            <izz>3.01141e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='rh_hip_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/hip.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rh_hip_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/hip.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rh_hip_joint' type='revolute'>
+        <child>rh_hip_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='rh_upper_leg_link'>
+        <pose frame=''>-0.092133 -0.110825 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 -0.035774 0 -0 0</pose>
+          <mass>0.025</mass>
+          <inertia>
+            <ixx>2.05659e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000163829</iyy>
+            <iyz>0</iyz>
+            <izz>0.000145461</izz>
+          </inertia>
+        </inertial>
+        <collision name='rh_upper_leg_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/upper_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rh_upper_leg_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/upper_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rh_upper_leg_joint' type='revolute'>
+        <child>rh_upper_leg_link</child>
+        <parent>rh_hip_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='rh_lower_leg_link'>
+        <pose frame=''>-0.092133 -0.110825 -0.071548 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 -0.031968 0 -0 0</pose>
+          <mass>0.025</mass>
+          <inertia>
+            <ixx>1.36455e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.39328e-05</iyy>
+            <iyz>0</iyz>
+            <izz>1.4692e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='rh_lower_leg_link_collision'>
+          <pose frame=''>0 0 0 0 0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/lower_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>1</kd>
+                <max_vel>0</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rh_lower_leg_link_visual'>
+          <pose frame=''>0 0 0 0 0 -3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/billy/skripsi_ws/src/oped_quadruped/oped_description/meshes/gazebo/lower_leg.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/FlatBlack</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rh_lower_leg_joint' type='revolute'>
+        <child>rh_lower_leg_link</child>
+        <parent>rh_upper_leg_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14159</lower>
+            <upper>3.14159</upper>
+            <effort>25</effort>
+            <velocity>1.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <plugin name='imu_controller' filename='libhector_gazebo_ros_imu.so'>
+        <updateRate>50.0</updateRate>
+        <topicName>imu/data</topicName>
+        <accelDrift>0.005 0.005 0.005</accelDrift>
+        <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+        <rateDrift>0.005 0.005 0.005</rateDrift>
+        <rateGaussianNoise>0.005 0.005 0.005</rateGaussianNoise>
+        <headingDrift>0.005</headingDrift>
+        <headingGaussianNoise>0.005</headingGaussianNoise>
+        <robotNamespace>/</robotNamespace>
+        <bodyName>base_link</bodyName>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 -0 0</rpyOffset>
+      </plugin>
+      <plugin name='p3d_base_controller' filename='libgazebo_ros_p3d.so'>
+        <alwaysOn>1</alwaysOn>
+        <updateRate>10.0</updateRate>
+        <bodyName>base_link</bodyName>
+        <topicName>odom/ground_truth</topicName>
+        <gaussianNoise>0.01</gaussianNoise>
+        <frameName>world</frameName>
+        <xyzOffsets>0 0 0</xyzOffsets>
+        <rpyOffsets>0 0 0</rpyOffsets>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <static>0</static>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <legacyModeNS>1</legacyModeNS>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <pose frame=''>0 0 0.22 0 -0 0</pose>
+    </model>
+  </world>
+</sdf>

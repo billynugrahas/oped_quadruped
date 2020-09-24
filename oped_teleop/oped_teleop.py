@@ -75,12 +75,19 @@ CTRL-C to quit
             }
 
         self.speedBindings={
-                'q':(1.1,1.1),
-                'z':(.9,.9),
-                'w':(1.1,1),
-                'x':(.9,1),
-                'e':(1,1.1),
-                'c':(1,.9),
+                'q':(1,1),
+                'z':(-1,-1),
+                'w':(1,0),
+                'x':(-1,0),
+                'e':(0,1),
+                'c':(0,-1),
+
+                # 'q':(1.1,1.1),
+                # 'z':(.9,.9),
+                # 'w':(1.1,1),
+                # 'x':(.9,1),
+                # 'e':(1,1.1),
+                # 'c':(1,.9),
             }
         
         self.poll_keys()
@@ -183,8 +190,13 @@ CTRL-C to quit
                     cmd_attempts += 1
 
                 elif key in self.speedBindings.keys():
-                    self.speed = self.speed * self.speedBindings[key][0]
-                    self.turn = self.turn * self.speedBindings[key][1]
+                    #  # Increasing by 0.01
+                    self.speed = self.speed + (0.01 * self.speedBindings[key][0])
+                    self.turn = self.turn + (0.1 * self.speedBindings[key][1])
+
+                    #  # Increasing 10%
+                    # self.speed = self.speed * self.speedBindings[key][0]
+                    # self.turn = self.turn * self.speedBindings[key][1]
                     
                     print(self.vels(self.speed, self.turn))
                     if (status == 14):

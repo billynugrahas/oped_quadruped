@@ -10,9 +10,9 @@
         <!-- <arg name="map_file" default="$(find champ_navigation)/maps/map.yaml"/> -->
         <!-- <arg name="map_file" default="$(find oped_navigation)/maps/map_default.yaml"/> -->
         <!-- <arg name="map_file" default="$(find oped_navigation)/maps/map_default_scale_2.yaml"/> -->
-        <arg name="map_file" default="$(find oped_navigation)/maps/map_default_scale_1_3.yaml"/>
+        <!-- <arg name="map_file" default="$(find oped_navigation)/maps/map_default_scale_1_3.yaml"/> -->
 
-        <!-- <arg name="map_file" default="$(find oped_navigation)/maps/konfigurasi_1.yaml"/> -->
+        <arg name="map_file" default="$(find oped_navigation)/maps/konfigurasi_1.yaml"/>
         <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" >
             <param name="frame_id" value="$(arg frame_prefix)map" />
         </node>
